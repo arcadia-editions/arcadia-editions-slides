@@ -1,0 +1,272 @@
+:root {
+  --iv-slate: #31394d;
+  --iv-white: #ffffff;
+  --iv-orange: #f7a81b;
+  --iv-cyan: #00abc5;
+}
+
+.slidev-layout.ivangsa {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: var(--iv-white);
+  color: var(--iv-slate);
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+}
+
+.ivangsa .iv-header {
+  height: 83px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 24px 0 16px;
+  background: var(--iv-slate);
+  color: #f3f3f3;
+  overflow: hidden;
+}
+
+.ivangsa .iv-logo {
+  display: block;
+  width: 95px;
+  height: 84px;
+  object-fit: contain;
+  flex: none;
+}
+
+.ivangsa .iv-header-title {
+  margin: 0;
+  color: #f3f3f3;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.12;
+  white-space: nowrap;
+}
+
+.ivangsa .iv-body {
+  box-sizing: border-box;
+  height: calc(100% - 83px);
+  padding: 34px 55px 38px;
+  overflow: hidden;
+}
+
+.ivangsa .iv-body h1,
+.ivangsa .iv-body h2,
+.ivangsa .iv-body h3 {
+  color: var(--iv-slate);
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.ivangsa .iv-body h1 { font-size: 40px; line-height: 1.15; }
+.ivangsa .iv-body h2 { font-size: 32px; line-height: 1.2; }
+.ivangsa .iv-body h3 { font-size: 25px; line-height: 1.25; }
+.ivangsa .iv-body p,
+.ivangsa .iv-body li { font-size: 25px; line-height: 1.3; }
+.ivangsa .iv-body ul { margin-top: 0.5em; }
+.ivangsa .iv-body li { margin: 0.35em 0; }
+.ivangsa .iv-body a { color: #058dc7; }
+.ivangsa .iv-body code { font-family: 'Roboto Mono', Consolas, monospace; }
+.ivangsa .iv-body pre { font-size: 17px; }
+
+.ivangsa.cover .iv-body {
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ivangsa.cover .iv-body h1 {
+  margin: 0;
+  font-size: 40px;
+  white-space: nowrap;
+  transform: translateY(-30px);
+}
+
+.ivangsa.section .iv-body,
+.ivangsa.closing .iv-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+.ivangsa.section .iv-body h1,
+.ivangsa.closing .iv-body h1 { margin: 0; max-width: 100%; }
+.ivangsa.section .iv-body h2,
+.ivangsa.closing .iv-body h2,
+.ivangsa.section .iv-body p,
+.ivangsa.closing .iv-body p { margin: 0; }
+
+.ivangsa.two-columns .iv-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  height: 100%;
+}
+.ivangsa.image-heavy .iv-image-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 36px;
+  height: 100%;
+}
+.ivangsa.image-heavy .iv-image-grid img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.ivangsa.full-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ivangsa .iv-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 22px;
+  margin: 54px 0 36px;
+  font-size: 28px;
+  font-weight: 700;
+}
+.ivangsa .iv-flow > span { text-align: center; }
+.ivangsa .iv-flow .iv-arrow { color: #058dc7; font-weight: 400; }
+.ivangsa .iv-callout { text-align: center; font-size: 27px; }
+
+.ivangsa .iv-ecosystem {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr 1fr;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  text-align: center;
+}
+.ivangsa .iv-ecosystem__group {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+.ivangsa .iv-ecosystem__group h2,
+.ivangsa .iv-ecosystem__center h2 { margin: 0; font-size: 31px; }
+.ivangsa .iv-ecosystem__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 148px;
+}
+.ivangsa .iv-ecosystem__icons img {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+}
+.ivangsa .iv-ecosystem__icons .iv-kafka { width: 118px; height: 118px; }
+.ivangsa .iv-ecosystem__center {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+}
+.ivangsa .iv-ecosystem__center img { width: 142px; height: 142px; object-fit: contain; }
+.ivangsa .iv-ecosystem__copy { margin: 0; font-size: 20px !important; line-height: 1.24 !important; }
+.ivangsa .iv-ecosystem__drift {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  color: #e69138;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.ivangsa .iv-visual-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 22px;
+  margin: 54px 28px 36px;
+}
+.ivangsa .iv-visual-flow figure { margin: 0; text-align: center; }
+.ivangsa .iv-visual-flow img {
+  display: block;
+  width: 132px;
+  height: 132px;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}
+.ivangsa .iv-visual-flow figcaption { font-size: 22px; font-weight: 700; }
+.ivangsa .iv-visual-flow .iv-arrow { color: #058dc7; font-size: 48px; font-weight: 400; }
+.ivangsa.closing .iv-body { position: relative; align-items: flex-start; text-align: left; padding: 38px 72px; }
+.ivangsa.closing .iv-body h1 { align-self: stretch; text-align: left; }
+.ivangsa.closing .iv-body .iv-qr { position: absolute; right: 78px; bottom: 52px; width: 148px; height: 148px; image-rendering: pixelated; }
+
+.slidev-layout.ivangsa.about-me {
+  display: grid;
+  grid-template-columns: 34% 66%;
+  align-items: center;
+  gap: 58px;
+  padding: 0 74px;
+  background: var(--iv-slate);
+  color: var(--iv-white);
+}
+.ivangsa.about-me .iv-about-photo {
+  width: min(100%, 286px);
+  aspect-ratio: 1;
+  justify-self: center;
+  object-fit: cover;
+  object-position: center 10%;
+  border: 3px solid var(--iv-cyan);
+  border-radius: 50%;
+}
+.ivangsa.about-me .iv-about-copy { padding-right: 42px; }
+.ivangsa.about-me .iv-about-name {
+  margin: 0 0 5px;
+  color: var(--iv-white);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+.ivangsa.about-me .iv-about-handle {
+  margin: 0 0 31px;
+  color: #c9d1e2;
+  font-size: 27px;
+}
+.ivangsa.about-me .iv-about-list {
+  display: grid;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 25px;
+  line-height: 1.22;
+}
+.ivangsa.about-me .iv-about-list li {
+  position: relative;
+  margin: 0;
+  padding-left: 29px;
+}
+.ivangsa.about-me .iv-about-list li::before {
+  position: absolute;
+  left: 0;
+  color: var(--iv-orange);
+  content: '✦';
+}
+.ivangsa.about-me .iv-about-list strong { color: var(--iv-white); }
+
+.ivangsa .iv-zenwave-image {
+  display: block;
+  width: calc(100% - 46px);
+  height: calc(100% - 24px);
+  margin: 10px auto 0;
+  object-fit: contain;
+}
+.ivangsa .iv-zenwave-link {
+  position: absolute;
+  right: 105px;
+  bottom: 63px;
+  margin: 0;
+  color: var(--iv-slate);
+  font-size: 20px;
+  font-weight: 700;
+}

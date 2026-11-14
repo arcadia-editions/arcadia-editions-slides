@@ -1,0 +1,18 @@
+{
+  "name": "arcadia-editions-slides",
+  "private": true,
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev:theme-showcase": "slidev talks/theme-showcase/slides.md",
+    "build:theme-showcase": "node clean-out.mjs theme-showcase && slidev build talks/theme-showcase/slides.md --out ../../output/theme-showcase",
+    "export:theme-showcase": "slidev export talks/theme-showcase/slides.md --output output/theme-showcase.pdf",
+    "browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "5.2.8",
+    "@slidev/cli": "53.0.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "1.64.0"
+  }
+}
