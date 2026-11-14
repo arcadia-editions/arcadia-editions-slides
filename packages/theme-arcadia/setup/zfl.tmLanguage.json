@@ -1,0 +1,13 @@
+{
+  "name": "zfl",
+  "scopeName": "source.zfl",
+  "aliases": ["zdl"],
+  "patterns": [
+    { "name": "comment.line.double-slash.zfl", "match": "//.*$" },
+    { "name": "comment.block.zfl", "begin": "/\\*", "end": "\\*/" },
+    { "name": "string.quoted.double.zfl", "match": "\"[^\"]*\"" },
+    { "name": "storage.type.annotation.zfl", "match": "@[A-Za-z_]\\w*" },
+    { "name": "keyword.control.zfl", "match": "\\b(when|do|start|end|emits|call|on|response|service|for|systems|flow|config|commands|entity|aggregate|enum|input|output|event|apis|plugins)\\b" },
+    { "name": "entity.name.type.zfl", "match": "\\b[A-Z][A-Za-z0-9]*\\b" }
+  ]
+}

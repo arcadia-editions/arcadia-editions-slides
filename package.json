@@ -1,12 +1,17 @@
 {
   "name": "arcadia-editions-slides",
   "private": true,
-  "engines": { "node": ">=22.12.0" },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev:theme-showcase": "slidev talks/theme-showcase/slides.md",
     "build:theme-showcase": "node clean-out.mjs theme-showcase && slidev build talks/theme-showcase/slides.md --out ../../output/theme-showcase",
     "export:theme-showcase": "slidev export talks/theme-showcase/slides.md --output output/theme-showcase.pdf",
-    "browsers": "playwright install chromium"
+    "browsers": "playwright install chromium",
+    "dev:jug-arcadia-zenwave": "slidev talks/jug-arcadia-zenwave/slides.md",
+    "build:jug-arcadia-zenwave": "node clean-out.mjs jug-arcadia-zenwave && slidev build talks/jug-arcadia-zenwave/slides.md --out ../../output/jug-arcadia-zenwave",
+    "export:jug-arcadia-zenwave": "slidev export talks/jug-arcadia-zenwave/slides.md --output output/jug-arcadia-zenwave.pdf"
   },
   "dependencies": {
     "@fontsource/roboto": "5.2.8",
