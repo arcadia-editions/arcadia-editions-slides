@@ -8,38 +8,170 @@ layout: section
 
 <!-- Published JUG title -->
 
-<p style="font-size:26px;line-height:1.2;text-align:center;margin:0">AI-Assisted Domain Driven Development</p>
+<p style="font-size:26px;line-height:1.2;text-align:center;margin:0">AI-Assisted Domain Driven Design</p>
 <p style="font-size:34px;line-height:1.2;font-weight:700;text-align:center;margin-top:16px">From Event Storming to an Event-Driven modular monolith with Kotlin & Spring Boot</p>
 
+<p style="position:absolute;left:24px;bottom:12px;font-size:18px;color:#6b7785;margin:0">Ivan Garcia Sainz-Aja</p>
+<p style="position:absolute;right:24px;bottom:12px;font-size:18px;color:#6b7785;margin:0">Coruña JUG · 19 November 2026</p>
+
+---
+layout: section
+title: 'Software Engineering in 2026'
+---
+
+<ul class="opening-list">
+  <li v-click="1"><ph-code-bold class="ic code" />Generating <span class="code">code</span> becomes cheap</li>
+  <li v-click="2"><ph-magnifying-glass-bold class="ic verify" /><span class="verify">Verifying</span> is the hard part
+    <ul>
+      <li v-click="3" class="spec"><ph-file-text-bold class="ic" />Approving the spec</li>
+      <li v-click="4"><ph-flask-bold class="ic" />Testing the result</li>
+      <li v-click="5" class="prove"><ph-seal-check-bold class="ic" />… and proving it</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- The question this talk answers. Don't give the answer yet. Spec = core of the talk (DDD as code). Testing = classic tests (validation, contract, unit, integration). Proving = we point towards formal verification, not a full answer. Answers revealed in the recap slide at the end. -->
+
+<style>
+.opening-list { list-style: none; margin: 0; padding: 0; text-align: left; }
+.opening-list li { font-size: 40px !important; font-weight: 700; line-height: 1.3 !important; margin: 0.5em 0 !important; color: #31394d; }
+.opening-list .ic { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em; color: #6b7785; }
+.opening-list ul { list-style: none; margin: 0.5em 0 0 1.6em; padding: 0; }
+.opening-list ul li { font-size: 34px !important; font-weight: 700; margin: 0.5em 0 !important; }
+.opening-list ul li.spec { font-size: 38px !important; color: #00abc5; }
+.opening-list ul li.spec .ic { color: #00abc5; }
+.opening-list ul li.prove { font-style: italic; color: #6b7785; }
+.opening-list .code { color: #00abc5; }
+.opening-list .verify { color: #f7a81b; }
+</style>
+
+---
+layout: section
+title: 'Software Engineering in 2026'
+---
+
+<h1 style="font-size:64px !important;text-align:center">Spec Driven Development</h1>
+
+---
+layout: section
+title: 'Software Engineering in 2026'
+---
+
+<h1 style="font-size:64px !important;text-align:center">The problem</h1>
+
+---
+layout: default
+title: 'Markdown is the bottleneck'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/Markdown-Mayhem_%20LLM-Paper-Flood.png" todo="LLM flooding a developer with Markdown" h="437px" />
+</div>
+
+<!-- Only the problem: LLMs generate Markdown faster than anyone can read it. The developer drowns. Leads into "Markdown is the bottleneck". -->
+
+---
+layout: default
+title: 'The problem: Markdown is the bottleneck'
+hide: true
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/markdown-is-the-bottleneck-featured.webp" todo="Markdown is the bottleneck (blog featured image)" h="437px" />
+</div>
+
+<!-- The problem. LLMs write Markdown faster than any human can read it. Nobody reads it all; decisions slip in as "approved". Reading Markdown is the bottleneck. -->
+
 ---
 layout: section
 title: ''
 ---
 
-<p style="font-size:26px;line-height:1.2;text-align:center;margin:0"><s>AI-Assisted Domain Driven Development</s></p>
-<p style="font-size:34px;line-height:1.2;font-weight:700;text-align:center;margin-top:16px"><s>From Event Storming to an Event-Driven modular monolith with Kotlin and Spring Boot</s></p>
-
+<h1 style="font-size:64px !important;text-align:center">The proposal</h1>
 
 ---
 layout: section
-title: ''
+title: 'The proposal'
 ---
 
-<p style="font-size:26px;line-height:1.2;text-align:center;margin:0">Ingeniería de Software en los tiempos que corren</p>
-<p style="font-size:34px;line-height:1.2;font-weight:700;text-align:center;margin-top:16px">SDD sin quemarse las pestañas leyendo specs en Markdown escritas por LLMs</p>
+<h1 class="ddd-title">Domain Driven Design</h1>
+
+<h1 v-click="1" class="ddd-ascode">as code</h1>
+
+<!-- The proposal: DDD. Click: as code. Next slide shows what "as code" means. -->
+
+<style>
+.ddd-title { font-size: 48px !important; }
+.ddd-ascode { color: #00abc5 !important; font-size: 76px !important; margin-top: -4px !important; }
+</style>
+
+---
+layout: section
+title: 'Domain Driven Design'
+titleAccent: ' as code'
+---
+
+<div class="p2-row">
+
+<img v-click="1" class="p2-blueprints" src="/Layered-EventStorming-Blueprint-Stack.png" alt="Event Storming, state machine and class diagram blueprints" />
+
+<div v-click="2" class="p2-models">
+<span class="p2-arrow">→</span>
+<div class="p2-files">
+<div class="p2-file zfl">
+<b>place-order.zfl <small>Process Level</small></b>
+
+```zfl
+when OrderCreated do authorizePayment {
+    service PaymentsProcessing
+    emits PaymentAuthorized
+    emits PaymentDeclined
+}
+```
+
+</div>
+<div class="p2-file zdl">
+<b>payments-processing.zdl <small>Design Level</small></b>
+
+```zfl
+service PaymentsProcessingService {
+  @asyncapi(channel: "order-created")
+  authorizePayment(AuthorizePaymentInput)
+    withEvents [PaymentAuthorized |
+                         PaymentDeclined]
+}
+```
+
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Variant B: ZDL shows a service (command + events) instead of the aggregate, to connect with Event Storming. What "as code" means. Clicks: 1 the blueprints (Event Storming, state machines, class diagrams), 2 they become real code: ZFL (process level) + ZDL (design level). -->
+
+<style>
+.p2-row { display: flex; align-items: center; justify-content: center; gap: 28px; }
+.p2-blueprints { height: 235px; width: auto; flex: none; transform: rotate(-9deg); }
+.p2-models { display: flex; align-items: center; gap: 18px; }
+.p2-arrow { font-size: 48px; color: #31394d; }
+.p2-files { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.p2-file { border-left: 6px solid #31394d; border-radius: 6px; box-shadow: 0 4px 14px rgba(49,57,77,.18); background: #fff; padding: 6px 10px 2px; }
+.p2-file.zfl { border-left-color: #f7a81b; }
+.p2-file.zdl { border-left-color: #00abc5; }
+.p2-file b { display: block; font-size: 16px; color: #31394d; margin-bottom: 4px; }
+.p2-file b small { font-weight: 400; color: #6b7785; margin-left: 8px; }
+.p2-file .slidev-code { margin: 0 !important; --slidev-code-font-size: 15px; --slidev-code-line-height: 1.4; }
+</style>
 
 ---
 layout: two-columns
-title: 'Spec-Driven Development: Too Loops'
+title: 'Spec-Driven Development: Two Loops'
 ---
 
 ::left::
 
-<div v-click.hide="1" style="position:absolute;left:0;right:0;top:83px;bottom:0;display:flex;align-items:center;justify-content:center">
-  <h1 style="margin:0">Spec Driven Development</h1>
-</div>
-
-<div v-click="2">
+<div v-click="1">
 
 ### Human in the Loop
 
@@ -51,7 +183,7 @@ DDD → models you can read and approve
 
 ::right::
 
-<div v-click="[1, 3]">
+<div v-click.hide="2">
 
 ### Away From Keyboard
 
@@ -68,15 +200,24 @@ Today we focus on HITL. Everything until "Away from Keyboard" section is the HIT
 -->
 
 ---
-layout: section
+layout: about-me
 title: ''
 ---
 
-# Domain Driven Design
+<img class="iv-about-photo" src="/ivangsa-springio-2025.webp" alt="Ivan Garcia Sainz-Aja speaking at Spring I/O 2025" style="width:300px;aspect-ratio:3/4;border-radius:8px;object-position:center" />
 
-<h1 v-click style="color:#00abc5;margin-top:8px">as code</h1>
+<div class="iv-about-copy">
+  <h1 class="iv-about-name">Ivan Garcia Sainz-Aja</h1>
+  <p class="iv-about-handle">@ivangsa · ivangsa.com</p>
+  <ul class="iv-about-list">
+    <li>Creator and maintainer of <strong>ZenWave360</strong></li>
+    <li>AsyncAPI <strong>TSC Member</strong> and <strong>Ambassador</strong></li>
+    <li>Maintainer of <strong>VSCode Preview Extension</strong> and <strong>Kafka Bindings</strong></li>
+    <li>Built <strong>Arcadia Editions</strong> to show DDD as code end to end</li>
+  </ul>
+</div>
 
-<!-- What we do is DDD. Click: DDD as code (ZFL + ZDL). -->
+<!-- Why me: ZDL in production since 2023, ZFL this year. Arcadia Editions: why I built it. -->
 
 ---
 layout: cover
@@ -125,12 +266,25 @@ title: 'Arcadia Editions in Miro'
 
 ---
 layout: default
-title: 'Modeling Design Level Event Storming (2023)'
+title: 'ZDL: Design Level Event Storming as Code'
 ---
 
 <div style="margin:-32px -55px -38px">
 <Shot src="/EventStorming-ZDL-Mapping.png" todo="2023 image: Event Storming design level mapped to ZDL" h="455px" />
 </div>
+
+<!-- ZDL: Design Level as code. Built 2023, in production projects for 4 years. Gave me the experience building DSLs, parsers and IDE editors (highlighting, autocomplete, preview). -->
+
+---
+layout: default
+title: 'ZFL: Process Level Event Storming as Code'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/event-storming-zfl-eventflow-and-systems.webp" todo="ZFL editor + event flow + systems" h="437px" />
+</div>
+
+<!-- ZFL: Process Level as code. Built this year on top of the ZDL experience. Delivers what it promises so far, but not production-proven yet. -->
 
 ---
 layout: section
@@ -170,12 +324,10 @@ title: 'Event Storming: Policies are Business Rules'
 
 ---
 layout: section
-title: 'ZFL: Event Storming as code'
+title: 'ZFL'
 ---
 
-# What is ZFL?
-
-ZenWave Flow Language: Event Storming as code.
+# ZFL: Process Level Event Storming as Code
 
 ---
 layout: default
@@ -272,12 +424,6 @@ systems {
 }
 ```
 
----
-layout: section
-title: 'ZFL: EventStorming as Code'
----
-
-# ZFL is EventStorming as Code
 
 ---
 layout: default
@@ -373,6 +519,26 @@ title: 'Zoom in'
 
 ---
 layout: default
+title: 'ZDL: Design Level Event Storming as Code'
+---
+
+<div style="margin:-32px -55px -38px">
+<Shot src="/EventStorming-ZDL-Mapping.png" todo="2023 image: Event Storming design level mapped to ZDL" h="455px" />
+</div>
+
+---
+layout: default
+title: 'From ZFL: what we have to build'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/zfl-systems.png" todo="ZFL Systems" h="437px" />
+</div>
+
+<!-- Same Systems projection, different question: from one ZFL we know which systems to build, and which commands and events each one implements. -->
+
+---
+layout: default
 title: 'One business flow: many bounded contexts'
 ---
 
@@ -404,6 +570,8 @@ title: 'ZenWave SDD skills'
 <div style="margin:-22px -55px 0">
 <Shot src="/zenwave-sdd-github.png" todo="Screenshot: skills repo in GitHub" h="400px" />
 </div>
+
+<!-- Not by hand: an AI skill in this repo reads the ZFL + the services to implement, and drafts one repo per system with a draft ZDL. Very complete draft; you still review it. -->
 
 ---
 layout: section
@@ -440,15 +608,6 @@ title: 'Built to last'
 </style>
 
 <!-- Agentic coding makes code cheap. Rewrite the app in a year. Data, APIs, events must last. -->
-
----
-layout: default
-title: 'ZDL captures what lasts'
----
-
-<div style="margin:-32px -55px -38px">
-<Shot src="/EventStorming-ZDL-Mapping.png" todo="2023 image: Event Storming design level mapped to ZDL" h="455px" />
-</div>
 
 ---
 layout: default
@@ -528,13 +687,52 @@ service OrdersCheckoutService for (Order) {
 <!-- Source: orders-checkout-api/domain-model.zdl (trimmed). Data + state machine, APIs, events. -->
 
 ---
-layout: section
-title: 'Connected Graph'
+layout: default
+title: 'Connected Graph: ZFL ↔ ZDL'
 ---
 
-# A connected graph
+<div class="link-panes">
+<div class="link-pane zfl">
+<b>place-order-flow.zfl</b>
+<pre>systems {
+  <span v-mark="{ at: 1, type: 'box', color: '#f7a81b' }">@zdl("catalog-inventory-api/domain-model.zdl")</span>
+  CatalogInventory { ... }
+}
+&nbsp;
+@compensates(reserveStock)
+when <span v-mark="{ at: 3, type: 'underline', color: '#00abc5' }">PaymentDeclined</span>, ...
+  do <span v-mark="{ at: 2, type: 'circle', color: '#3fb27f' }">releaseStock</span> {
+    service CatalogInventory.InventoryService
+    emits <span v-mark="{ at: 4, type: 'underline', color: '#9b6bd6' }">StockReleased</span>
+}</pre>
+</div>
+<div class="link-pane zdl">
+<b v-mark="{ at: 1, type: 'box', color: '#f7a81b' }">catalog-inventory-api/domain-model.zdl</b>
+<pre>service InventoryService for (StockReservation) {
+&nbsp;
+  @asyncapi(api: PaymentsProcessingApi,
+    channel: "<span v-mark="{ at: 3, type: 'underline', color: '#00abc5' }">payment-declined-event-v1</span>")
+  @transition(from: [RESERVED, CONFIRMED],
+              to: RELEASED)
+  <span v-mark="{ at: 2, type: 'circle', color: '#3fb27f' }">releaseStock</span>(ReleaseStockInput)
+    withEvents <span v-mark="{ at: 4, type: 'underline', color: '#9b6bd6' }">StockReleased</span>
+}</pre>
+</div>
+</div>
 
-ZFL + ZDLs, deterministically parseable.
+<p v-click="5" class="link-verdict">ZFL + ZDLs → one connected graph, deterministically parseable.</p>
+
+<!-- Every name in the ZFL points to something real in a ZDL. 1: system → ZDL file. 2: command → service method (with its state transition). 3: event consumed → AsyncAPI channel. 4: event emitted → ZDL event. Not a drawing: links you can follow, by parser or by LLM. -->
+
+<style>
+.link-panes { display: flex; gap: 20px; margin-top: -6px; }
+.link-pane { flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 10px 14px; background: #fff; border: 2px solid #31394d; border-top-width: 8px; border-radius: 8px; }
+.link-pane.zfl { border-top-color: #f7a81b; }
+.link-pane.zdl { border-top-color: #00abc5; }
+.link-pane b { font-size: 16px; color: #31394d; align-self: flex-start; }
+.link-pane pre { margin: 0; font-family: 'Roboto Mono', Consolas, monospace; font-size: 14px; line-height: 1.45; color: #31394d; white-space: pre; background: none; }
+.link-verdict { margin-top: 14px !important; font-size: 24px; font-weight: 700; text-align: center; color: #31394d; }
+</style>
 
 ---
 layout: default
@@ -591,6 +789,70 @@ hide: true
 # LLMs reason on the graph too
 
 No library needed: agents read ZFL + ZDLs and follow the links.
+
+---
+layout: default
+title: 'What is formal verification?'
+---
+
+<div class="fv">
+  <div class="fv-col tests">
+    <small>Tests</small>
+    <b>Check the cases you thought of</b>
+    <span>A few paths, chosen by a human</span>
+  </div>
+  <div v-click="1" class="fv-col proof">
+    <small>Formal verification</small>
+    <b>Check every possible state</b>
+    <span>All interleavings, all orderings, all failures</span>
+  </div>
+</div>
+
+<div v-click="2" class="fv-props">
+  <p><b>Safety</b> · something bad never happens <em>"never ship an unpaid order"</em></p>
+  <p><b>Liveness</b> · something good eventually happens <em>"a declined payment always releases the stock"</em></p>
+</div>
+
+<!-- Define it before using it. Tests sample the behaviour; formal verification (model checking) explores every reachable state of a model and checks properties. Two kinds of property: safety and liveness. Reference tool: TLA+. -->
+
+<style>
+.fv { display: flex; gap: 28px; justify-content: center; margin-top: 6px; }
+.fv-col { display: flex; flex-direction: column; gap: 6px; width: 380px; padding: 14px 20px; background: #fff; box-shadow: 0 4px 14px rgba(49,57,77,.18); }
+.fv-col.tests { border-left: 6px solid #9aa5b1; }
+.fv-col.proof { border-left: 6px solid #f7a81b; }
+.fv-col small { font-size: 15px; color: #6b7785; text-transform: uppercase; letter-spacing: .05em; }
+.fv-col b { font-size: 28px; line-height: 1.2; color: #31394d; }
+.fv-col span { font-size: 18px; color: #31394d; }
+.fv-props { margin-top: 30px; }
+.fv-props p { margin: 0.4em 0 !important; font-size: 22px; color: #31394d; }
+.fv-props em { color: #6b7785; }
+</style>
+
+---
+layout: default
+title: 'Why formal verification?'
+---
+
+<div class="why">
+  <p class="why-lead">In an event-driven flow, the bugs live <span class="hl">between</span> services</p>
+  <ul class="why-list">
+    <li v-click="1">Race conditions between events</li>
+    <li v-click="2">Lost or missing compensations</li>
+    <li v-click="3">Stuck states: orders that never finish</li>
+  </ul>
+  <p v-click="4" class="why-end">Tests rarely find them. Exploring every state does.</p>
+</div>
+
+<!-- DRAFT, content to review. Why, not how: the hard bugs in event-driven flows are in the interleavings between services, not inside one service. Tests sample a few paths; model checking explores all of them. -->
+
+<style>
+.why-lead { margin: 0 0 18px !important; font-size: 32px !important; font-weight: 700; color: #31394d; }
+.why-lead .hl { color: #f7a81b; }
+.why-list { list-style: none; margin: 0; padding: 0; }
+.why-list li { font-size: 28px !important; font-weight: 600; margin: 0.4em 0 0 1em !important; color: #31394d; }
+.why-list li::before { content: "⚠"; margin-right: 0.5em; color: #f7a81b; }
+.why-end { margin-top: 26px !important; font-size: 28px !important; font-weight: 700; color: #00abc5; }
+</style>
 
 ---
 layout: default
@@ -704,6 +966,7 @@ title: 'Deterministic generation'
 ---
 layout: default
 title: 'Generation: Many artifacts, not one shot'
+hide: true
 ---
 
 <div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px 0;display:flex;align-items:center;justify-content:center">
@@ -766,84 +1029,22 @@ title: 'Deterministic Generation: Many Architectures'
 class: code-sm
 ---
 
-````md magic-move {lines: false}
 ```zfl
 config {
     basePackage "com.arcadiaeditions.orders"
     layout CleanHexagonalProjectLayout
 }
 
-// generated packages
-├─ core.domain                  // Order, OrderStatus
-├─ core.inbound                 // OrdersCheckoutService
-├─ core.outbound.jpa            // OrderRepository
-├─ core.application             // OrdersCheckoutServiceImpl
-├─ adapters.web                 // REST controllers
-└─ adapters.events              // event listeners
+// available layouts:
+// - CleanHexagonalProjectLayout (default)
+// - LayeredProjectLayout
+// - SimpleDomainProjectLayout
+// - HexagonalProjectLayout
+// - CleanArchitectureProjectLayout
+// - ...or your own ProjectLayout
 ```
 
-```zfl
-config {
-    basePackage "com.arcadiaeditions.orders"
-    layout LayeredProjectLayout
-}
-
-// generated packages
-├─ domain                       // Order, OrderStatus
-├─ service                      // OrdersCheckoutService
-├─ repository.jpa               // OrderRepository
-├─ service.impl                 // OrdersCheckoutServiceImpl
-├─ web                          // REST controllers
-└─ events                       // event listeners
-```
-
-```zfl
-config {
-    basePackage "com.arcadiaeditions.orders"
-    layout SimpleDomainProjectLayout
-}
-
-// generated packages
-├─ domain                       // Order, OrderStatus
-├─ .                            // OrdersCheckoutService
-├─ .                            // OrderRepository
-├─ .                            // OrdersCheckoutServiceImpl
-├─ .                            // REST controllers
-└─ .                            // event listeners
-```
-
-```zfl
-config {
-    basePackage "com.arcadiaeditions.orders"
-    layout HexagonalProjectLayout
-}
-
-// generated packages
-├─ domain                       // Order, OrderStatus
-├─ application.port.driving     // OrdersCheckoutService
-├─ application.port.driven.jpa  // OrderRepository
-├─ application.service          // OrdersCheckoutServiceImpl
-├─ adapter.driving.web          // REST controllers
-└─ adapter.driving.event        // event listeners
-```
-
-```zfl
-config {
-    basePackage "com.arcadiaeditions.orders"
-    layout CleanArchitectureProjectLayout
-}
-
-// generated packages
-├─ domain                       // Order, OrderStatus
-├─ usecase.boundary.input       // OrdersCheckoutService
-├─ usecase.boundary.output.jpa  // OrderRepository
-├─ usecase.interactor           // OrdersCheckoutServiceImpl
-├─ adapter.controller           // REST controllers
-└─ adapter.listener             // event listeners
-```
-````
-
-<!-- Same ZDL, five project layouts. Change one line, regenerate. Packages from zenwave-sdk ProjectLayout classes; "." = base package. Fully customizable: layout.xxxPackage or your own ProjectLayout. -->
+<!-- Same ZDL, five project layouts. Change one line, regenerate. Fully customizable: layout.xxxPackage or your own ProjectLayout. -->
 
 ---
 layout: section
@@ -875,3 +1076,69 @@ title: 'ZenWave SDD skills'
 </div>
 
 <!-- zenwave-sdd: iterative model-driven workflow. -->
+
+---
+layout: section
+title: 'Show me the code'
+---
+
+# Show me the code
+
+<p style="font-family:'Roboto Mono',Consolas,monospace;font-size:22px;background:#31394d;color:#fff;padding:10px 18px;border-radius:6px">git clone github.com/arcadia-editions/arcadia-editions-modulith-service-kotlin</p>
+
+<p style="font-size:22px;color:#6b7785">ZDL ↔ code · modules & architecture overlays · events between modules · unit · integration · acceptance tests</p>
+
+<!-- Close the slides, open IntelliJ. -->
+
+---
+layout: default
+title: 'Software Engineering in 2026'
+---
+
+<div class="recap">
+  <p class="recap-q"><span class="verify">Verifying</span> is the hard part</p>
+  <div class="recap-row spec">
+    <span class="q"><ph-file-text-bold class="ic" />Approving the spec</span>
+    <span v-click="1" class="a">→ DDD as code</span>
+  </div>
+  <div class="recap-row">
+    <span class="q"><ph-flask-bold class="ic" />Testing the result</span>
+    <span v-click="2" class="a">→ validation · contract · unit · integration</span>
+  </div>
+  <div class="recap-row prove">
+    <span class="q"><ph-seal-check-bold class="ic" />… and proving it</span>
+    <span v-click="3" class="a">→ towards formal verification</span>
+  </div>
+</div>
+
+<!-- Recap: back to the opening question, now with the answers. Spec: fully answered (DDD as code). Testing: classic tests, shown in the code. Proving: we only point there (ZFL + ZDL state machines, TLA+ as reference). -->
+
+<style>
+.recap { display: flex; flex-direction: column; gap: 22px; margin-top: 10px; }
+.recap .ic { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em; color: #6b7785; }
+.recap-q { margin: 0 0 6px !important; font-size: 36px !important; font-weight: 700; color: #31394d; }
+.recap-q .verify { color: #f7a81b; }
+.recap-row { display: flex; align-items: baseline; gap: 18px; margin-left: 1.2em; font-size: 30px; font-weight: 700; color: #31394d; }
+.recap-row .q { flex: none; width: 400px; }
+.recap-row .a { font-weight: 700; color: #31394d; }
+.recap-row.spec .q, .recap-row.spec .q .ic, .recap-row.spec .a { color: #00abc5; }
+.recap-row.prove .q { font-style: italic; color: #6b7785; }
+.recap-row.prove .a { color: #f7a81b; }
+</style>
+
+---
+layout: outro
+title: 'Thank you!'
+---
+
+# Questions?
+
+Slides, code and links<br>github.com/arcadia-editions
+
+Ivan Garcia Sainz-Aja<br>ivangsa.com
+
+<p style="margin-top:18px !important;color:#00abc5;font-weight:700">4h workshop: DDD as code · for today's attendees</p>
+
+<img class="iv-qr" src="/arcadia-github-qr.svg" alt="QR code to github.com/arcadia-editions" />
+
+<!-- Workshop: only for people who came today; we'll see how to organize it. -->
