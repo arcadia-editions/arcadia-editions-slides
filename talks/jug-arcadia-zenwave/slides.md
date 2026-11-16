@@ -1,10 +1,36 @@
 ---
 theme: ../../packages/theme-arcadia
 title: 'Arcadia Editions & ZenWave'
-layout: cover
+layout: section
 ---
 
 <!-- DRAFT · Human in the Loop part. "Away from Keyboard" part goes after the last slide. -->
+
+<!-- Published JUG title -->
+
+<h1 style="font-size:38px;line-height:1.2;text-align:center;margin:0">AI-Assisted Domain Driven Development</h1>
+<p style="font-size:22px;text-align:center;margin-top:16px">From Event Storming to an Event-Driven modular monolith with Kotlin and Spring Boot</p>
+
+---
+layout: section
+title: 'Arcadia Editions & ZenWave'
+---
+
+<h1 style="font-size:38px;line-height:1.2;text-align:center;margin:0"><s>AI-Assisted Domain Driven Development</s></h1>
+<p style="font-size:22px;text-align:center;margin-top:16px"><s>From Event Storming to an Event-Driven modular monolith with Kotlin and Spring Boot</s></p>
+
+---
+layout: section
+title: 'Arcadia Editions & ZenWave'
+---
+
+<h1 style="font-size:38px;line-height:1.2;text-align:center;margin:0">Ingeniería de Software en los tiempos que corren</h1>
+<p style="font-size:22px;text-align:center;margin-top:16px">Cómo hacer SDD y no quemarse las pestañas leyendo specs en Markdown escritas por LLMs</p>
+
+---
+layout: cover
+title: 'Arcadia Editions'
+---
 
 <Shot src="/arcadia-editions-logo.png" todo="Arcadia Editions logo (centered)" h="300px" />
 
@@ -15,7 +41,7 @@ title: 'Arcadia Editions'
 
 # github.com/arcadia-editions
 
-<Shot src="/github-arcadia-editions.png" todo="Screenshot: Arcadia Editions GitHub org main page" />
+<Shot src="/arcadia-editions-logo.png" todo="Screenshot: Arcadia Editions GitHub org main page" />
 
 ---
 layout: default
