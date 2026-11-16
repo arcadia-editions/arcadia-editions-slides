@@ -9,4 +9,10 @@ npm run dev:theme-showcase
 
 Per talk add `dev:/build:/export:<name>` scripts in `package.json` and set `theme: ../../packages/theme-arcadia` in the deck frontmatter.
 
-Licenses: code Apache 2.0, content CC BY 4.0 (TODO: add files). Third-party images keep their own license.
+## License
+
+- **Code** (theme, components, grammars, build scripts): [MIT](LICENSE), same as the rest of Arcadia Editions.
+- **Content** (slide text, diagrams and the images made for these talks): [CC BY 4.0](LICENSE-CONTENT). Reuse it freely, with attribution.
+- **Third-party material keeps its own license** and is not covered by the above:
+  - logos and trademarks (Java, Spring, Kotlin, OpenAPI, AsyncAPI, GitHub, Miro, EventCatalog...), including the ones visible inside screenshots;
+  - `magnifying-glass.png` and `magnifying-glass-transparent.webp`.

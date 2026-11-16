@@ -1,6 +1,7 @@
 {
   "name": "arcadia-editions-slides",
   "private": true,
+  "license": "MIT",
   "engines": {
     "node": ">=22.12.0"
   },
