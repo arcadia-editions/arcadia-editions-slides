@@ -1,0 +1,12 @@
+/* Bigger code in this talk. Slidev reads these vars with !important. */
+:root {
+  --slidev-code-font-size: 24px;
+  --slidev-code-line-height: 1.4;
+}
+
+/* per-slide sizes: add `class: code-sm` / `class: code-lg` to the slide frontmatter */
+.code-sm { --slidev-code-font-size: 20px; }
+.code-lg { --slidev-code-font-size: 30px; }
+
+/* TLA+ slide: lift the two code columns to leave room for the bottom banner */
+.code-tla .iv-columns { gap: 16px !important; margin-top: -26px; }

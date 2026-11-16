@@ -1,0 +1,14 @@
+{
+  "name": "tla",
+  "scopeName": "source.tla",
+  "aliases": ["tlaplus"],
+  "patterns": [
+    { "name": "comment.line.tla", "match": "\\\\\\*.*$" },
+    { "name": "comment.block.tla", "begin": "\\(\\*", "end": "\\*\\)" },
+    { "name": "keyword.other.module.tla", "match": "-{4,}.*MODULE.*-{4,}|={4,}" },
+    { "name": "string.quoted.double.tla", "match": "\"[^\"]*\"" },
+    { "name": "keyword.control.tla", "match": "\\b(EXTENDS|VARIABLES?|CONSTANTS?|UNCHANGED|ENABLED|IF|THEN|ELSE|LET|IN|CASE|OTHER|EXCEPT|DOMAIN|SUBSET|UNION|CHOOSE|WF_|SF_)\\b" },
+    { "name": "keyword.operator.tla", "match": "/\\\\|\\\\/|==|=>|~>|<>|\\[\\]|'|\\\\in|\\\\notin|\\\\A|\\\\E|~" },
+    { "name": "entity.name.function.tla", "match": "^[A-Z][A-Za-z0-9_]*(?=\\s*==)" }
+  ]
+}
