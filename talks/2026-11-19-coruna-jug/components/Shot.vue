@@ -3,10 +3,12 @@
 import { ref } from 'vue'
 const props = defineProps<{ src?: string; todo: string; h?: string }>()
 const broken = ref(!props.src)
+// Runtime string src isn't rewritten by Vite: prefix the build base (e.g. GitHub Pages /repo/talk/).
+const url = props.src?.startsWith('/') ? import.meta.env.BASE_URL.replace(/\/$/, '') + props.src : props.src
 </script>
 
 <template>
-  <img v-if="!broken" :src="props.src" :alt="props.todo" class="shot" :style="{ maxHeight: props.h || '380px' }" @error="broken = true" />
+  <img v-if="!broken" :src="url" :alt="props.todo" class="shot" :style="{ maxHeight: props.h || '380px' }" @error="broken = true" />
   <div v-else class="shot-todo" :style="{ height: props.h || '380px' }">TODO · {{ props.todo }}</div>
 </template>
 
