@@ -9,6 +9,10 @@ npm run dev:theme-showcase
 
 Per talk add `dev:/build:/export:<name>` scripts in `package.json` and set `theme: ../../packages/theme-arcadia` in the deck frontmatter.
 
+`npm run build` builds every `talks/*/slides.md` into `dist/` (+ index). CI (`.github/workflows/pages.yml`) publishes it on push to `main`: https://arcadia-editions.github.io/arcadia-editions-slides/
+
+Talk folders named `YYYY-MM-DD-event` are frozen once presented; new talk = new folder.
+
 ## License
 
 - **Code** (theme, components, grammars, build scripts): [MIT](LICENSE), same as the rest of Arcadia Editions.

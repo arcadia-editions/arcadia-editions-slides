@@ -6,13 +6,14 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "build": "node build-all.mjs",
     "dev:theme-showcase": "slidev talks/theme-showcase/slides.md",
     "build:theme-showcase": "node clean-out.mjs theme-showcase && slidev build talks/theme-showcase/slides.md --out ../../output/theme-showcase",
     "export:theme-showcase": "slidev export talks/theme-showcase/slides.md --output output/theme-showcase.pdf",
     "browsers": "playwright install chromium",
-    "dev:jug-arcadia-zenwave": "slidev talks/jug-arcadia-zenwave/slides.md",
-    "build:jug-arcadia-zenwave": "node clean-out.mjs jug-arcadia-zenwave && slidev build talks/jug-arcadia-zenwave/slides.md --out ../../output/jug-arcadia-zenwave",
-    "export:jug-arcadia-zenwave": "slidev export talks/jug-arcadia-zenwave/slides.md --output output/jug-arcadia-zenwave.pdf"
+    "dev:2026-11-19-coruna-jug": "slidev talks/2026-11-19-coruna-jug/slides.md",
+    "build:2026-11-19-coruna-jug": "node clean-out.mjs 2026-11-19-coruna-jug && slidev build talks/2026-11-19-coruna-jug/slides.md --out ../../output/2026-11-19-coruna-jug",
+    "export:2026-11-19-coruna-jug": "slidev export talks/2026-11-19-coruna-jug/slides.md --output output/2026-11-19-coruna-jug.pdf"
   },
   "dependencies": {
     "@fontsource/roboto": "5.2.8",
