@@ -19,37 +19,6 @@ layout: section
 title: 'Software Engineering in 2026'
 ---
 
-<ul class="opening-list">
-  <li v-click="1"><ph-code-bold class="ic code" />Generating <span class="code">code</span> becomes cheap</li>
-  <li v-click="2"><ph-magnifying-glass-bold class="ic verify" /><span class="verify">Verifying</span> is the hard part
-    <ul>
-      <li v-click="3" class="spec"><ph-file-text-bold class="ic" />Approving the spec</li>
-      <li v-click="4"><ph-flask-bold class="ic" />Testing the result</li>
-      <li v-click="5" class="prove"><ph-seal-check-bold class="ic" />… and proving it</li>
-    </ul>
-  </li>
-</ul>
-
-<!-- The question this talk answers. Don't give the answer yet. Spec = core of the talk (DDD as code). Testing = classic tests (validation, contract, unit, integration). Proving = we point towards formal verification, not a full answer. Answers revealed in the recap slide at the end. -->
-
-<style>
-.opening-list { list-style: none; margin: 0; padding: 0; text-align: left; }
-.opening-list li { font-size: 40px !important; font-weight: 700; line-height: 1.3 !important; margin: 0.5em 0 !important; color: #31394d; }
-.opening-list .ic { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em; color: #6b7785; }
-.opening-list ul { list-style: none; margin: 0.5em 0 0 1.6em; padding: 0; }
-.opening-list ul li { font-size: 34px !important; font-weight: 700; margin: 0.5em 0 !important; }
-.opening-list ul li.spec { font-size: 38px !important; color: #00abc5; }
-.opening-list ul li.spec .ic { color: #00abc5; }
-.opening-list ul li.prove { font-style: italic; color: #6b7785; }
-.opening-list .code { color: #00abc5; }
-.opening-list .verify { color: #f7a81b; }
-</style>
-
----
-layout: section
-title: 'Software Engineering in 2026'
----
-
 <h1 style="font-size:64px !important;text-align:center">Spec Driven Development</h1>
 
 ---
@@ -81,6 +50,49 @@ hide: true
 </div>
 
 <!-- The problem. LLMs write Markdown faster than any human can read it. Nobody reads it all; decisions slip in as "approved". Reading Markdown is the bottleneck. -->
+
+---
+layout: section
+title: 'Software Engineering in 2026'
+---
+
+<ul class="opening-list">
+  <li v-click="1"><ph-code-bold class="ic code" />Generating <span class="code">code</span> becomes cheap</li>
+  <li v-click="2"><ph-magnifying-glass-bold class="ic verify" /><span class="verify">Design and verification</span> still not
+    <ul>
+      <li v-click="3" class="p1"><ph-compass-bold class="ic" />Understanding the domain <span v-click="6" class="pillar">DDD as Code</span></li>
+      <li v-click="4" class="p2"><ph-seal-check-bold class="ic" />Proving the design is correct <span v-click="7" class="pillar">Formal Verification</span></li>
+      <li v-click="5" class="p3"><ph-flask-bold class="ic" />Validating the result <span v-click="8" class="pillar">Behaviour Validation</span></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Answer to the Markdown problem: when code is cheap, what remains are the three pillars of software engineering. Clicks 3-5: the three problems; 6-8: the technique for each (DDD, FV, SbE). All three happen BEFORE handing the spec to the agent. -->
+
+<style>
+.opening-list { list-style: none; margin: 0; padding: 0; text-align: left; }
+.opening-list li { font-size: 40px !important; font-weight: 700; line-height: 1.3 !important; margin: 0.5em 0 !important; color: #31394d; }
+.opening-list .ic { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em; color: #6b7785; }
+.opening-list ul { list-style: none; margin: 0.5em 0 0 1.6em; padding: 0; }
+.opening-list ul li { font-size: 32px !important; font-weight: 700; margin: 0.45em 0 !important; }
+.opening-list .pillar { margin-left: 0.4em; padding: 0 0.35em; border-radius: 6px; font-size: 0.8em; color: #fff; }
+.opening-list .p1 .pillar { background: #00abc5; }
+.opening-list .p2 .pillar { background: #f7a81b; color: #31394d; }
+.opening-list .p3 .pillar { background: #3fb27f; }
+.opening-list .code { color: #00abc5; }
+.opening-list .verify { color: #f7a81b; }
+</style>
+
+---
+layout: default
+title: 'The three pillars of agentic engineering'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/three-pillars-of-agentic-engineering-comic.webp" todo="Three pillars comic" h="437px" />
+</div>
+
+<!-- Architect (DDD), scientist (FV), site inspector (SbE) feed the robot; its fast stream of code is filtered by the examples gate. Today: mostly pillar 1, a first look at pillar 2. -->
 
 ---
 layout: section
@@ -265,6 +277,25 @@ title: 'Arcadia Editions in Miro'
 </div>
 
 ---
+layout: section
+title: ''
+---
+
+<h1 style="font-size:64px !important;text-align:center">EventStorming as Code</h1>
+
+---
+layout: default
+title: 'ZFL: Process Level Event Storming as Code'
+hide: true
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/event-storming-zfl-eventflow-and-systems.webp" todo="ZFL editor + event flow + systems" h="437px" />
+</div>
+
+<!-- ZFL: Process Level as code. Built this year on top of the ZDL experience. Delivers what it promises so far, but not production-proven yet. -->
+
+---
 layout: default
 title: 'ZDL: Design Level Event Storming as Code'
 ---
@@ -274,17 +305,6 @@ title: 'ZDL: Design Level Event Storming as Code'
 </div>
 
 <!-- ZDL: Design Level as code. Built 2023, in production projects for 4 years. Gave me the experience building DSLs, parsers and IDE editors (highlighting, autocomplete, preview). -->
-
----
-layout: default
-title: 'ZFL: Process Level Event Storming as Code'
----
-
-<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
-<Shot src="/event-storming-zfl-eventflow-and-systems.webp" todo="ZFL editor + event flow + systems" h="437px" />
-</div>
-
-<!-- ZFL: Process Level as code. Built this year on top of the ZDL experience. Delivers what it promises so far, but not production-proven yet. -->
 
 ---
 layout: section
@@ -408,6 +428,7 @@ when OrderCreated do authorizePayment {
 ---
 layout: default
 title: 'ZFL: The systems'
+hide: true
 ---
 
 ```zfl
@@ -519,15 +540,6 @@ title: 'Zoom in'
 
 ---
 layout: default
-title: 'ZDL: Design Level Event Storming as Code'
----
-
-<div style="margin:-32px -55px -38px">
-<Shot src="/EventStorming-ZDL-Mapping.png" todo="2023 image: Event Storming design level mapped to ZDL" h="455px" />
-</div>
-
----
-layout: default
 title: 'From ZFL: what we have to build'
 ---
 
@@ -558,6 +570,15 @@ flowchart LR
   linkStyle default stroke:#31394d,stroke-width:2px
 ```
 
+</div>
+
+---
+layout: default
+title: 'ZDL: Design Level Event Storming as Code'
+---
+
+<div style="margin:-32px -55px -38px">
+<Shot src="/EventStorming-ZDL-Mapping.png" todo="2023 image: Event Storming design level mapped to ZDL" h="455px" />
 </div>
 
 ---
@@ -700,10 +721,10 @@ title: 'Connected Graph: ZFL ↔ ZDL'
 }
 &nbsp;
 @compensates(reserveStock)
-when <span v-mark="{ at: 3, type: 'underline', color: '#00abc5' }">PaymentDeclined</span>, ...
-  do <span v-mark="{ at: 2, type: 'circle', color: '#3fb27f' }">releaseStock</span> {
+when <span v-mark="{ at: 1, type: 'underline', color: '#00abc5' }">PaymentDeclined</span>, ...
+  do <span v-mark="{ at: 1, type: 'circle', color: '#3fb27f' }">releaseStock</span> {
     service CatalogInventory.InventoryService
-    emits <span v-mark="{ at: 4, type: 'underline', color: '#9b6bd6' }">StockReleased</span>
+    emits <span v-mark="{ at: 1, type: 'underline', color: '#9b6bd6' }">StockReleased</span>
 }</pre>
 </div>
 <div class="link-pane zdl">
@@ -711,16 +732,16 @@ when <span v-mark="{ at: 3, type: 'underline', color: '#00abc5' }">PaymentDeclin
 <pre>service InventoryService for (StockReservation) {
 &nbsp;
   @asyncapi(api: PaymentsProcessingApi,
-    channel: "<span v-mark="{ at: 3, type: 'underline', color: '#00abc5' }">payment-declined-event-v1</span>")
+    channel: "<span v-mark="{ at: 1, type: 'underline', color: '#00abc5' }">payment-declined-event-v1</span>")
   @transition(from: [RESERVED, CONFIRMED],
               to: RELEASED)
-  <span v-mark="{ at: 2, type: 'circle', color: '#3fb27f' }">releaseStock</span>(ReleaseStockInput)
-    withEvents <span v-mark="{ at: 4, type: 'underline', color: '#9b6bd6' }">StockReleased</span>
+  <span v-mark="{ at: 1, type: 'circle', color: '#3fb27f' }">releaseStock</span>(ReleaseStockInput)
+    withEvents <span v-mark="{ at: 1, type: 'underline', color: '#9b6bd6' }">StockReleased</span>
 }</pre>
 </div>
 </div>
 
-<p v-click="5" class="link-verdict">ZFL + ZDLs → one connected graph, deterministically parseable.</p>
+<p v-click="1" class="link-verdict">ZFL + ZDLs → one connected graph, deterministically parseable.</p>
 
 <!-- Every name in the ZFL points to something real in a ZDL. 1: system → ZDL file. 2: command → service method (with its state transition). 3: event consumed → AsyncAPI channel. 4: event emitted → ZDL event. Not a drawing: links you can follow, by parser or by LLM. -->
 
@@ -793,6 +814,7 @@ No library needed: agents read ZFL + ZDLs and follow the links.
 ---
 layout: default
 title: 'What is formal verification?'
+hide: true
 ---
 
 <div class="fv">
@@ -831,6 +853,7 @@ title: 'What is formal verification?'
 ---
 layout: default
 title: 'Why formal verification?'
+hide: true
 ---
 
 <div class="why">
@@ -857,6 +880,7 @@ title: 'Why formal verification?'
 ---
 layout: default
 title: 'Towards formal verification'
+hide: true
 ---
 
 # Towards formal verification?
@@ -882,6 +906,77 @@ title: 'Towards formal verification'
   display: flex; align-items: center; justify-content: center;
   font-size: 0.85em; font-weight: 900; line-height: 1; color: #f7a81b;
 }
+</style>
+
+---
+layout: default
+title: 'When correct pieces behave incorrectly'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/three-pillars-formal-verification-featured.webp" todo="FV featured: green services, one red path" h="437px" />
+</div>
+
+<p v-click class="cp-question">What about the scenarios we haven't thought of?</p>
+
+<!-- Pillar 2. Easy: one endpoint, one topic. Hard: the system as a whole. Concurrent processes, events in any order, timers expire, operations fail, compensations fire. Each service correct in isolation, the system incorrect. We draw diagrams, walk scenarios, write tests... for the scenarios we thought of. Formal verification: describe pieces + interactions + what "correct" means (safety: bad never happens; liveness: good eventually happens). Model checker explores every reachable state and gives a counterexample. At design time, before any code. Reference: TLA+ (Lamport). -->
+
+<style>
+.cp-question {
+  position: absolute; left: 55px; right: 55px; bottom: 18px; margin: 0 !important; padding: 10px 16px;
+  background: #fff; border-left: 6px solid #f7a81b; box-shadow: 0 4px 14px rgba(49,57,77,.18);
+  font-size: 26px; font-weight: 700; color: #31394d; text-align: center;
+}
+</style>
+
+---
+layout: default
+title: 'What a formal specification describes'
+---
+
+<ul class="fspec">
+  <li v-click><ph-circles-four-bold class="ic" />The <b>state</b> of the system and its possible initial states</li>
+  <li v-click><ph-arrows-left-right-bold class="ic" />The <b>actions</b> that can change that state</li>
+  <li v-click><ph-seal-check-bold class="ic" />The <b>properties</b> we want the system to satisfy</li>
+  <li v-click><ph-warning-bold class="ic" />The <b>assumptions</b> under which the system operates</li>
+</ul>
+
+<!-- Properties: safety (something bad never happens) and liveness (something desired eventually happens). Model checking explores all reachable states of a finite model; on a violation it gives a counterexample: the sequence of actions that led to it. At design time, before code. Reference language: TLA+ (Lamport). -->
+
+<style>
+.fspec { list-style: none; margin: 20px 0 0; padding: 0; }
+.fspec li { font-size: 32px !important; line-height: 1.3 !important; margin: 0.55em 0 !important; color: #31394d; }
+.fspec li b { color: #d98f0a; }
+.fspec .ic { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em; color: #f7a81b; }
+</style>
+
+---
+layout: default
+title: "Don't we already have it in our domain models?"
+---
+
+<table class="fv-map">
+  <thead><tr><th>ZFL</th><th>ZDL</th><th>What it tells us</th></tr></thead>
+  <tbody>
+    <tr v-click><td></td><td><code>@lifecycle</code>, <code>@transition</code></td><td>Aggregate states and transitions</td></tr>
+    <tr v-click><td><code>emits</code></td><td><code>withEvents</code></td><td>Possible outcomes of a command</td></tr>
+    <tr v-click><td><code>when Event do command</code></td><td><code>@listener</code></td><td>Async interactions between contexts</td></tr>
+    <tr v-click><td><code>call</code></td><td><code>@calls</code></td><td>Sync interactions</td></tr>
+    <tr v-click><td><code>@time</code></td><td><code>@timer</code></td><td>Time-triggered actions</td></tr>
+    <tr v-click><td><code>@compensates</code></td><td></td><td>Compensation relationships</td></tr>
+    <tr v-click><td><code>@outcome</code>, <code>end</code></td><td></td><td>Declared outcomes of a business flow</td></tr>
+  </tbody>
+</table>
+
+<!-- First thought when learning TLA+: with DDD as code we already describe lifecycles, commands, events, transitions and interactions between BCs in a machine-readable language. Much of the structure of a state machine, distributed across aggregates and contexts. Open question: how much translates to a formal spec without inventing design decisions the modeller never made. -->
+
+<style>
+.fv-map { width: 100%; border-collapse: collapse; font-size: 20px; color: #31394d; }
+.fv-map th { text-align: left; padding: 6px 12px; border-bottom: 3px solid #31394d; }
+.fv-map th:nth-child(1) { color: #d98f0a; }
+.fv-map th:nth-child(2) { color: #00abc5; }
+.fv-map td { padding: 6px 12px; border-bottom: 1px solid #d6dbe1; }
+.fv-map code { font-size: 18px; }
 </style>
 
 ---
@@ -939,7 +1034,6 @@ NoLeak == (payment = "DECLINED")
 ===========================
 ```
 
-<div v-click class="tla-verdict">ZFL is not 100% of TLA+ … but humans can read it.</div>
 
 <!-- TLA+ = the real thing for formal verification, but nobody on the team reads this. ZFL + ZDL: not 100% of what TLA+ checks, but user friendly. Same flow as the ZFL "when PaymentDeclined do releaseStock" lines. -->
 
@@ -951,6 +1045,132 @@ NoLeak == (payment = "DECLINED")
   font-size: 24px; font-weight: 700; color: #31394d;
 }
 </style>
+
+---
+layout: default
+title: 'One policy: from the models to TLA+'
+class: code-sm
+hide: true
+---
+
+````md magic-move {lines: true}
+```zfl
+// ZFL: the policy, when StockReleased do cancelOrder
+@compensates(startOrderCheckout)
+when StockReleased do cancelOrder {
+    service OrdersCheckout.OrdersCheckoutService
+    emits OrderCancelled
+}
+```
+
+```zfl {2-3}
+// ZDL: who listens, and from which states
+@listener(zdl: CatalogInventoryZdl, event: StockReleased)
+@transition(from: [CREATED, CONFIRMED], to: CANCELLED)
+cancelOrder(CancelOrderInput) Order withEvents OrderCancelled
+```
+
+```tla
+\* TLA+: the same step as an action
+CancelOrder ==
+  /\ "StockReleased" \in pending
+  /\ IF order \in {"CREATED", "CONFIRMED"}
+     THEN /\ order' = "CANCELLED"
+          /\ Emit("StockReleased", {"OrderCancelled"})
+     ELSE /\ UNCHANGED order
+          /\ Emit("StockReleased", {})
+  /\ UNCHANGED <<reservation, payment>>
+```
+
+```tla {2-3}
+\* TLA+: what the models don't say
+\* the ELSE branch: what happens in an unexpected state?
+\* `pending`: how events are delivered, in which order
+NoHoldOnCancelledOrder ==
+  Quiescent => ~(order = "CANCELLED" /\ payment = "AUTHORIZED")
+```
+````
+
+<!-- Trigger, guard and target state come straight from the models. The ELSE branch, event delivery and the property itself do not: they come from prose or assumptions. -->
+
+---
+layout: default
+title: 'An experiment: model-checking Arcadia Editions'
+---
+
+<div class="xp">
+<div class="xp-col">
+<b class="xp-h">Exploring every path · Place Order flow</b>
+<table class="xp-t">
+  <tbody>
+    <tr><td>Parsing</td><td>7 of 7 files conform to their grammars</td></tr>
+    <tr><td>Static checks ZFL ↔ ZDL</td><td><strong>19 errors</strong></td></tr>
+    <tr><td>All paths, one order</td><td>220 states · 8 final states · <strong class="bad">3 incorrect</strong></td></tr>
+    <tr><td>Repaired design</td><td>312 states · <strong class="ok">no incorrect final states</strong></td></tr>
+  </tbody>
+</table>
+</div>
+<div v-click class="xp-col">
+<b class="xp-h">How far from TLA+? <small>0 = vocabulary · 100 = mechanical translation</small></b>
+<table class="xp-t">
+  <tbody>
+    <tr><td>Current Arcadia domain models</td><td class="n">30–45</td></tr>
+    <tr><td>With stricter modelling discipline</td><td class="n">45–58</td></tr>
+    <tr><td>With five additional language conventions</td><td class="n">65–80</td></tr>
+    <tr><td>Reference TLA+ specification</td><td class="n">100</td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<!-- Independent agent run: only the two grammars, their docs and the Arcadia models (1 ZFL + 6 ZDLs). ~1,200 lines of Python, no TLA+ tooling. 19 errors from static analysis alone. 3 incorrect final states: customer charged for a cancelled order, orphaned payment hold, fulfillment scheduled on a cancelled order. First one: race between happy path and reservation timer. Catch: it had to assume event delivery, timers, unexpected states; properties came from prose. Scores: one agent's judgment, one slice of one flow, reference spec not reviewed nor run through TLC. Not verification coverage. Missing: execution semantics, outcome↔state link, explicit correct end states. Markdown SDD spec: ~5–10 (different scale). -->
+
+<style>
+.xp { display: flex; gap: 24px; margin-top: 4px; }
+.xp-col { flex: 1; padding: 10px 14px; background: #fff; box-shadow: 0 4px 14px rgba(49,57,77,.18); border-top: 6px solid #f7a81b; border-radius: 6px; }
+.xp-h { display: block; font-size: 18px; color: #31394d; margin-bottom: 6px; }
+.xp-h small { display: block; font-weight: 400; font-size: 13px; color: #6b7785; }
+.xp-t { width: 100%; border-collapse: collapse; font-size: 16px; color: #31394d; }
+.xp-t td { padding: 7px 6px; border-bottom: 1px solid #d6dbe1; vertical-align: top; }
+.xp-t td:first-child { color: #6b7785; }
+.xp-t td.n { text-align: right; font-weight: 700; white-space: nowrap; }
+.xp-t .bad { color: #d64545; }
+.xp-t .ok { color: #3fb27f; }
+</style>
+
+---
+layout: default
+title: 'ZFL is not 100% of TLA+'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/tla-vs-zfl-zdl.webp" todo="Same rule: TLA+ vs ZFL + ZDL" h="437px" />
+</div>
+
+<p v-click class="cp-question">ZFL is not 100% of TLA+ … but humans can read it.</p>
+
+<!-- How many of us write a TLA+ spec for every business flow? I don't. But I do write domain models. If they give a useful subset of FV with a small extra modelling effort: a warning in the IDE, the same checks in CI. Doesn't replace TLA+ or an expert. Still a hypothesis: blog post on ivangsa.com. -->
+
+<style>
+.cp-question {
+  position: absolute; left: 55px; right: 55px; bottom: 18px; margin: 0 !important; padding: 10px 16px;
+  background: #fff; border-left: 6px solid #f7a81b; box-shadow: 0 4px 14px rgba(49,57,77,.18);
+  font-size: 26px; font-weight: 700; color: #31394d; text-align: center;
+}
+</style>
+
+---
+layout: default
+title: 'ZenWave SDD skills'
+---
+
+<p style="position:absolute;right:24px;bottom:12px;font-size:20px;color:#6b7785;margin:0">github.com/ZenWave360/zenwave-sdd</p>
+
+<div style="margin:-22px -55px 0">
+<Shot src="/iterative-model-driven-light.png" todo="Iterative model-driven workflow" h="400px" />
+</div>
+
+<!-- zenwave-sdd: iterative model-driven workflow. -->
 
 ---
 layout: default
@@ -1065,19 +1285,6 @@ title: 'SDD: the second loop'
 <!-- Back to the two loops: we leave Human in the Loop and enter the Away From Keyboard loop. TODO: next part -->
 
 ---
-layout: default
-title: 'ZenWave SDD skills'
----
-
-<p style="position:absolute;right:24px;bottom:12px;font-size:20px;color:#6b7785;margin:0">github.com/ZenWave360/zenwave-sdd</p>
-
-<div style="margin:-22px -55px 0">
-<Shot src="/iterative-model-driven-light.png" todo="Iterative model-driven workflow" h="400px" />
-</div>
-
-<!-- zenwave-sdd: iterative model-driven workflow. -->
-
----
 layout: section
 title: 'Show me the code'
 ---
@@ -1091,27 +1298,60 @@ title: 'Show me the code'
 <!-- Close the slides, open IntelliJ. -->
 
 ---
-layout: default
+layout: section
 title: 'Software Engineering in 2026'
 ---
 
+<ul class="opening-list">
+  <li><ph-code-bold class="ic code" />Generating <span class="code">code</span> becomes cheap</li>
+  <li><ph-magnifying-glass-bold class="ic verify" /><span class="verify">Design and verification</span> still not
+    <ul>
+      <li class="p1"><ph-compass-bold class="ic" />Understanding the domain <span v-click="1" class="pillar">DDD as Code</span></li>
+      <li class="p2"><ph-seal-check-bold class="ic" />Proving the design is correct <span v-click="2" class="pillar">Formal Verification</span></li>
+      <li class="p3"><ph-flask-bold class="ic" />Validating the result <span v-click="3" class="pillar">Behaviour Validation</span></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Recap: same opening slide, now with the answers. DDD: fully answered today (DDD as code: ZFL + ZDL). FV: a first look, still a hypothesis (ZFL + ZDL → TLA+). SbE: examples agreed and approved BEFORE handing the spec to the agent; independent check of the code (acceptance tests in the demo). Series on ivangsa.com. -->
+
+<style>
+.opening-list { list-style: none; margin: 0; padding: 0; text-align: left; }
+.opening-list li { font-size: 40px !important; font-weight: 700; line-height: 1.3 !important; margin: 0.5em 0 !important; color: #31394d; }
+.opening-list .ic { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em; color: #6b7785; }
+.opening-list ul { list-style: none; margin: 0.5em 0 0 1.6em; padding: 0; }
+.opening-list ul li { font-size: 32px !important; font-weight: 700; margin: 0.45em 0 !important; }
+.opening-list .pillar { margin-left: 0.4em; padding: 0 0.35em; border-radius: 6px; font-size: 0.8em; color: #fff; }
+.opening-list .p1 .pillar { background: #00abc5; }
+.opening-list .p2 .pillar { background: #f7a81b; color: #31394d; }
+.opening-list .p3 .pillar { background: #3fb27f; }
+.opening-list .code { color: #00abc5; }
+.opening-list .verify { color: #f7a81b; }
+</style>
+
+---
+layout: default
+title: 'Software Engineering in 2026'
+hide: true
+---
+
 <div class="recap">
-  <p class="recap-q"><span class="verify">Verifying</span> is the hard part</p>
+  <p class="recap-q">Code is cheap. <span class="verify">Design and verification</span> still not.</p>
   <div class="recap-row spec">
-    <span class="q"><ph-file-text-bold class="ic" />Approving the spec</span>
-    <span v-click="1" class="a">→ DDD as code</span>
-  </div>
-  <div class="recap-row">
-    <span class="q"><ph-flask-bold class="ic" />Testing the result</span>
-    <span v-click="2" class="a">→ validation · contract · unit · integration</span>
+    <span class="q"><ph-compass-bold class="ic" />Understanding the domain</span>
+    <span v-click="1" class="a">→ DDD as code: ZFL + ZDL</span>
   </div>
   <div class="recap-row prove">
-    <span class="q"><ph-seal-check-bold class="ic" />… and proving it</span>
-    <span v-click="3" class="a">→ towards formal verification</span>
+    <span class="q"><ph-seal-check-bold class="ic" />Proving the design</span>
+    <span v-click="2" class="a">→ towards Formal Verification</span>
+  </div>
+  <div class="recap-row sbe">
+    <span class="q"><ph-flask-bold class="ic" />Validating the result</span>
+    <span v-click="3" class="a">→ Specification by Example</span>
   </div>
 </div>
 
-<!-- Recap: back to the opening question, now with the answers. Spec: fully answered (DDD as code). Testing: classic tests, shown in the code. Proving: we only point there (ZFL + ZDL state machines, TLA+ as reference). -->
+<!-- Recap: the three pillars of agentic engineering. Pillar 1: fully answered today (DDD as code). Pillar 2: a first look, still a hypothesis (ZFL + ZDL → TLA+). Pillar 3: concrete examples agreed and approved BEFORE handing the spec to the agent; an independent check of the code it produces (acceptance tests in the demo). Series on ivangsa.com. -->
 
 <style>
 .recap { display: flex; flex-direction: column; gap: 22px; margin-top: 10px; }
@@ -1119,11 +1359,11 @@ title: 'Software Engineering in 2026'
 .recap-q { margin: 0 0 6px !important; font-size: 36px !important; font-weight: 700; color: #31394d; }
 .recap-q .verify { color: #f7a81b; }
 .recap-row { display: flex; align-items: baseline; gap: 18px; margin-left: 1.2em; font-size: 30px; font-weight: 700; color: #31394d; }
-.recap-row .q { flex: none; width: 400px; }
+.recap-row .q { flex: none; width: 450px; }
 .recap-row .a { font-weight: 700; color: #31394d; }
 .recap-row.spec .q, .recap-row.spec .q .ic, .recap-row.spec .a { color: #00abc5; }
-.recap-row.prove .q { font-style: italic; color: #6b7785; }
 .recap-row.prove .a { color: #f7a81b; }
+.recap-row.sbe .a { color: #3fb27f; }
 </style>
 
 ---
@@ -1135,10 +1375,71 @@ title: 'Thank you!'
 
 Slides, code and links<br>github.com/arcadia-editions
 
-Ivan Garcia Sainz-Aja<br>ivangsa.com
-
-<p style="margin-top:18px !important;color:#00abc5;font-weight:700">4h workshop: DDD as code · for today's attendees</p>
+ivangsa.com
 
 <img class="iv-qr" src="/arcadia-github-qr.svg" alt="QR code to github.com/arcadia-editions" />
 
-<!-- Workshop: only for people who came today; we'll see how to organize it. -->
+<p style="position:absolute;left:24px;bottom:12px;font-size:18px;color:#6b7785;margin:0">Ivan Garcia Sainz-Aja</p>
+<p style="position:absolute;right:24px;bottom:12px;font-size:18px;color:#6b7785;margin:0">Coruña JUG · 19 November 2026</p>
+
+<style>
+.ivangsa.closing .iv-body .iv-qr { width: 230px !important; height: 230px !important; right: 60px !important; bottom: 50px !important; }
+</style>
+
+---
+title: 'Resources'
+---
+
+# Resources
+
+<div class="res-grid">
+<div>
+
+**Arcadia Editions**
+
+- [github.com/arcadia-editions](https://github.com/arcadia-editions)
+- [arcadia-editions-architecture (ZFL flows)](https://github.com/arcadia-editions/arcadia-editions-architecture)
+- [arcadia-editions-modulith-api (ZDLs)](https://github.com/arcadia-editions/arcadia-editions-modulith-api)
+- [Modular monolith · Kotlin + Spring Boot](https://github.com/arcadia-editions/arcadia-editions-modulith-service-kotlin)
+- [Arcadia blog series](https://ivangsa.com/articles/arcadia/)
+
+**ZenWave**
+
+- [zenwave360.io](https://www.zenwave360.io/)
+- [ZenWave SDD skills](https://github.com/ZenWave360/zenwave-sdd)
+- [ZenWave Platform · VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ZenWave360.zenwave-platform)
+
+**Formal verification**
+
+- [TLA+: a high-level view (Leslie Lamport)](https://lamport.org/tla/high-level-view.html)
+
+</div>
+<div>
+
+**Three pillars of agentic engineering**
+
+- [When code is cheap: the three pillars of agentic engineering](https://ivangsa.com/articles/three-pillars-of-agentic-engineering/)
+- [Three pillars: Domain-Driven Design as code](https://ivangsa.com/articles/three-pillars-domain-driven-design-as-code/)
+- [Three pillars: Formal Verification in the age of agentic engineering](https://ivangsa.com/articles/three-pillars-formal-verification/)
+
+**Spec-Driven Development**
+
+- [Reading Markdown is the bottleneck](https://ivangsa.com/articles/sdd-markdown-is-the-bottleneck/)
+- [From EventStorming to a model your agents can read](https://ivangsa.com/articles/sdd-from-event-storming-to-a-model-your-agents-can-read/)
+- [Two loops: Model-Driven Human in the Loop](https://ivangsa.com/articles/sdd-two-loops-model-driven-human-in-the-loop/)
+- [Two loops: Agentic Away from Keyboard](https://ivangsa.com/articles/sdd-two-loops-agentic-away-from-keyboard-loop/)
+- [DM-SDD: use domain models instead of Markdown](https://ivangsa.com/articles/dm-sdd-domain-model-spec-driven-development/)
+- [You can't design event-driven systems in Markdown specs](https://ivangsa.com/articles/whats-wrong-with-spec-driven-development-and-how-to-fix-it/)
+
+</div>
+</div>
+
+<style>
+.res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; font-size: 13px; line-height: 1.35; }
+.res-grid p { margin: 10px 0 2px !important; font-size: 13px !important; color: #00abc5; }
+.res-grid ul { margin: 0; padding-left: 1.1em; }
+.res-grid li { font-size: 13px !important; line-height: 1.35 !important; margin: 0 !important; }
+.res-grid a { border-bottom: none; }
+</style>
+
+<!-- Not shown live: it's here for whoever opens the slides from the QR. -->
