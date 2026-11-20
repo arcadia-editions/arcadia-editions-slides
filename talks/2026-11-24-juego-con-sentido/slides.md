@@ -81,6 +81,41 @@ hide: true
 <!-- The problem. LLMs write Markdown faster than any human can read it. Nobody reads it all; decisions slip in as "approved". Reading Markdown is the bottleneck. -->
 
 ---
+layout: two-columns
+title: 'Spec-Driven Development: Two Loops'
+---
+
+::left::
+
+<div v-click="1">
+
+### Human in the Loop
+
+<Shot src="/two-loops-human-in-the-loop-featured.png" todo="HITL loop image" h="260px" />
+
+DDD → models you can read and approve
+
+</div>
+
+::right::
+
+<div v-click.hide="2">
+
+### Away From Keyboard
+
+<Shot src="/two-loops-afk-featured.png" todo="AFK loop image" h="260px" />
+
+Agents implement the approved models
+
+</div>
+
+<!--
+Two loops. AFK first: fully agentic, orchestrator + subagents, only after the human approves the models.
+Then HITL: discovery + modeling (Event Storming, ZFL, ZDL), human reviews projections.
+Today we focus on HITL. Everything until "Away from Keyboard" section is the HITL loop.
+-->
+
+---
 layout: section
 title: ''
 ---
@@ -170,6 +205,17 @@ title: ''
 <h1 style="font-size:64px !important;text-align:center">EventStorming as Code</h1>
 
 ---
+layout: section
+title: 'Arcadia Editions'
+---
+
+<img src="/magnifying-glass.png" alt="Magnifying glass" style="height:140px;margin:0 auto;display:block" />
+
+# Discovering the domain
+
+<!-- Event Storming live. -->
+
+---
 layout: default
 title: 'ZFL: Process Level Event Storming as Code'
 hide: true
@@ -210,26 +256,6 @@ title: 'Arcadia Editions @ GitHub'
 <Shot src="/arcadia-editions-github-screenshot.png" todo="Screenshot: Arcadia Editions GitHub org main page" h="405px" />
 </div>
 
-
----
-layout: default
-title: 'Arcadia Editions in Miro'
----
-
-<div style="margin:20px -55px 10px">
-<Shot src="/003-event-storming-arcadia-editions.jpg" todo="First Miro Event Storming" />
-</div>
-
----
-layout: section
-title: 'Arcadia Editions'
----
-
-<img src="/magnifying-glass.png" alt="Magnifying glass" style="height:140px;margin:0 auto;display:block" />
-
-# Discovering the domain
-
-<!-- Event Storming live. -->
 
 ---
 layout: default
