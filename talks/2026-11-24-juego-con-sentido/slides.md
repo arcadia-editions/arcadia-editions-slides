@@ -1,21 +1,8 @@
 ---
 theme: ../../packages/theme-arcadia
-title: ''
+title: 'Software Engineering in 2026'
 routerMode: hash
 layout: section
----
-
-<!-- Juego con Sentido · 24 Nov 2026. Event Storming details, projections and skills shown live, no slides. -->
-
-<p style="font-size:26px;line-height:1.2;text-align:center;margin:0">AI-Assisted Domain Driven Design</p>
-<p style="font-size:34px;line-height:1.2;font-weight:700;text-align:center;margin-top:16px">From Event Storming to an Event-Driven modular monolith with Kotlin & Spring Boot</p>
-
-<p style="position:absolute;left:24px;bottom:12px;font-size:18px;color:#6b7785;margin:0">Ivan Garcia Sainz-Aja</p>
-<p style="position:absolute;right:24px;bottom:12px;font-size:18px;color:#6b7785;margin:0">Juego con Sentido · 24 November 2026</p>
-
----
-layout: section
-title: 'Software Engineering in 2026'
 ---
 
 <h1 style="font-size:64px !important;text-align:center">Spec Driven Development</h1>
