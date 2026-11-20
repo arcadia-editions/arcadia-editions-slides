@@ -205,17 +205,6 @@ title: ''
 <h1 style="font-size:64px !important;text-align:center">EventStorming as Code</h1>
 
 ---
-layout: section
-title: 'Arcadia Editions'
----
-
-<img src="/magnifying-glass.png" alt="Magnifying glass" style="height:140px;margin:0 auto;display:block" />
-
-# Discovering the domain
-
-<!-- Event Storming live. -->
-
----
 layout: default
 title: 'ZFL: Process Level Event Storming as Code'
 hide: true
@@ -239,6 +228,17 @@ title: 'ZDL: Design Level Event Storming as Code'
 <!-- ZDL: Design Level as code. Built 2023, in production projects for 4 years. Gave me the experience building DSLs, parsers and IDE editors (highlighting, autocomplete, preview). -->
 
 ---
+layout: default
+title: 'Deterministic generation'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px 0;display:flex;align-items:center;justify-content:center">
+<Shot src="/zenwave-website-light.png" todo="Screenshot: ZenWave website" h="437px" />
+</div>
+
+<!-- Flashback: ZenWave -->
+
+---
 layout: cover
 title: 'Arcadia Editions'
 ---
@@ -259,14 +259,88 @@ title: 'Arcadia Editions @ GitHub'
 
 ---
 layout: default
-title: 'Deterministic generation'
+title: 'Arcadia Editions in Miro'
 ---
 
-<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px 0;display:flex;align-items:center;justify-content:center">
-<Shot src="/zenwave-website-light.png" todo="Screenshot: ZenWave website" h="437px" />
+<div style="margin:20px -55px 10px">
+<Shot src="/003-event-storming-arcadia-editions.jpg" todo="First Miro Event Storming" />
 </div>
 
-<!-- Flashback: ZenWave -->
+---
+layout: default
+title: 'ZFL: Building Blocks'
+---
+
+````md magic-move {lines: true}
+```zfl
+// 1. a business policy looks like
+//      when <event> do <command>
+when OrderCreated do authorizePayment {
+
+}
+```
+
+```zfl
+// 2. what a command produces: emits
+when OrderCreated do authorizePayment {
+    emits PaymentAuthorized
+    emits PaymentDeclined
+    emits PaymentFailed
+}
+```
+
+```zfl
+// 2b. sync calls: call + response
+when StartOrderCheckout do startOrderCheckout {
+    call reserveStock
+    on StockReservedResult emits OrderCreated
+    on StockUnavailableResult emits StockUnavailable
+}
+
+do reserveStock {
+    response StockReservedResult
+    response StockUnavailableResult
+}
+```
+
+```zfl
+// 3. outcomes: name each branch
+when OrderCreated do authorizePayment {
+    @outcome(authorized)
+    emits PaymentAuthorized
+    @outcome(declined)
+    emits PaymentDeclined
+    @failure @outcome(failed)
+    emits PaymentFailed
+}
+```
+
+```zfl
+// 4. systems: who owns the command
+when OrderCreated do authorizePayment {
+    service PaymentsProcessing.PaymentsProcessingService
+    @outcome(authorized)
+    emits PaymentAuthorized
+    @outcome(declined)
+    emits PaymentDeclined
+    @failure @outcome(failed)
+    emits PaymentFailed
+}
+```
+
+```zfl {3}
+// 4. systems: who owns the command
+when OrderCreated do authorizePayment {
+    service PaymentsProcessing.PaymentsProcessingService
+    @outcome(authorized)
+    emits PaymentAuthorized
+    @outcome(declined)
+    emits PaymentDeclined
+    @failure @outcome(failed)
+    emits PaymentFailed
+}
+```
+````
 
 ---
 layout: section
