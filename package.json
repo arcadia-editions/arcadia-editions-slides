@@ -13,7 +13,10 @@
     "browsers": "playwright install chromium",
     "dev:2026-11-19-coruna-jug": "slidev talks/2026-11-19-coruna-jug/slides.md",
     "build:2026-11-19-coruna-jug": "node clean-out.mjs 2026-11-19-coruna-jug && slidev build talks/2026-11-19-coruna-jug/slides.md --out ../../output/2026-11-19-coruna-jug",
-    "export:2026-11-19-coruna-jug": "slidev export talks/2026-11-19-coruna-jug/slides.md --output output/2026-11-19-coruna-jug.pdf"
+    "export:2026-11-19-coruna-jug": "slidev export talks/2026-11-19-coruna-jug/slides.md --output output/2026-11-19-coruna-jug.pdf",
+    "dev:2026-11-24-juego-con-sentido": "slidev talks/2026-11-24-juego-con-sentido/slides.md",
+    "build:2026-11-24-juego-con-sentido": "node clean-out.mjs 2026-11-24-juego-con-sentido && slidev build talks/2026-11-24-juego-con-sentido/slides.md --out ../../output/2026-11-24-juego-con-sentido",
+    "export:2026-11-24-juego-con-sentido": "slidev export talks/2026-11-24-juego-con-sentido/slides.md --output output/2026-11-24-juego-con-sentido.pdf"
   },
   "dependencies": {
     "@fontsource/roboto": "5.2.8",

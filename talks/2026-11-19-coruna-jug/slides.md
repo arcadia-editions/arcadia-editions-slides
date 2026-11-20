@@ -1,5 +1,6 @@
 ---
 theme: ../../packages/theme-arcadia
+routerMode: hash
 title: ''
 layout: section
 ---

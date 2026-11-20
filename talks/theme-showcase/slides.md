@@ -1,5 +1,6 @@
 ---
 theme: ../../packages/theme-arcadia
+routerMode: hash
 favicon: /asyncapi-mark.png
 title: 'Stop API Drift: Generate Java from AsyncAPI'
 layout: cover

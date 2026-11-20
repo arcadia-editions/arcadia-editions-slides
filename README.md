@@ -13,6 +13,8 @@ Per talk add `dev:/build:/export:<name>` scripts in `package.json` and set `them
 
 Talk folders named `YYYY-MM-DD-event` are frozen once presented; new talk = new folder.
 
+All decks use `routerMode: hash` (GitHub Pages deep links).
+
 ## License
 
 - **Code** (theme, components, grammars, build scripts): [MIT](LICENSE), same as the rest of Arcadia Editions.

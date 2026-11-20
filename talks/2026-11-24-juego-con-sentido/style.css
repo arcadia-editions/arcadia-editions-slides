@@ -1,0 +1,21 @@
+/* Bigger code in this talk. Slidev reads these vars with !important. */
+:root {
+  --slidev-code-font-size: 24px;
+  --slidev-code-line-height: 1.4;
+}
+
+/* per-slide sizes: add `class: code-sm` / `class: code-lg` to the slide frontmatter */
+.code-sm { --slidev-code-font-size: 20px; }
+.code-lg { --slidev-code-font-size: 30px; }
+
+/* TLA+ slide: lift the two code columns to leave room for the bottom banner */
+.code-tla .iv-columns { gap: 16px !important; margin-top: -26px; }
+
+/* ZDL 2023 / ZFL 2026 badges */
+.dsl-badge {
+  position: absolute; right: 24px; bottom: 18px; padding: 8px 16px;
+  background: #fff; box-shadow: 0 4px 14px rgba(49,57,77,.18);
+  font-size: 22px; font-weight: 700; color: #31394d;
+}
+.dsl-badge.prod { border-left: 6px solid #3fb27f; }
+.dsl-badge.new { border-left: 6px solid #f7a81b; }
