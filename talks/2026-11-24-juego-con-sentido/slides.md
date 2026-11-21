@@ -361,6 +361,15 @@ title: 'ZFL Projections - Systems'
 </div>
 
 ---
+layout: default
+title: 'ZFL Projections - Sequence Diagrams'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/zfl-sequence-diagrams-to-the-side.png" todo="ZFL: Sequence diagrams" h="437px" />
+</div>
+
+---
 layout: section
 title: 'Formal Verification'
 ---
@@ -560,10 +569,10 @@ title: 'What a formal specification describes'
 ---
 
 <ul class="fspec">
-  <li v-click><ph-circles-four-bold class="ic" />The <b>state</b> of the system and its possible initial states</li>
-  <li v-click><ph-arrows-left-right-bold class="ic" />The <b>actions</b> that can change that state</li>
-  <li v-click><ph-seal-check-bold class="ic" />The <b>properties</b> we want the system to satisfy</li>
-  <li v-click><ph-warning-bold class="ic" />The <b>assumptions</b> under which the system operates</li>
+  <li><ph-circles-four-bold class="ic" />The <b>state</b> of the system and its possible initial states</li>
+  <li><ph-arrows-left-right-bold class="ic" />The <b>actions</b> that can change that state</li>
+  <li><ph-seal-check-bold class="ic" />The <b>properties</b> we want the system to satisfy</li>
+  <li><ph-warning-bold class="ic" />The <b>assumptions</b> under which the system operates</li>
 </ul>
 
 <!-- Properties: safety (something bad never happens) and liveness (something desired eventually happens). Model checking explores all reachable states of a finite model; on a violation it gives a counterexample: the sequence of actions that led to it. At design time, before code. Reference language: TLA+ (Lamport). -->
@@ -583,13 +592,13 @@ title: "Don't we already have it in our domain models?"
 <table class="fv-map">
   <thead><tr><th>ZFL</th><th>ZDL</th><th>What it tells us</th></tr></thead>
   <tbody>
-    <tr v-click><td></td><td><code>@lifecycle</code>, <code>@transition</code></td><td>Aggregate states and transitions</td></tr>
-    <tr v-click><td><code>emits</code></td><td><code>withEvents</code></td><td>Possible outcomes of a command</td></tr>
-    <tr v-click><td><code>when Event do command</code></td><td><code>@listener</code></td><td>Async interactions between contexts</td></tr>
-    <tr v-click><td><code>call</code></td><td><code>@calls</code></td><td>Sync interactions</td></tr>
-    <tr v-click><td><code>@time</code></td><td><code>@timer</code></td><td>Time-triggered actions</td></tr>
-    <tr v-click><td><code>@compensates</code></td><td></td><td>Compensation relationships</td></tr>
-    <tr v-click><td><code>@outcome</code>, <code>end</code></td><td></td><td>Declared outcomes of a business flow</td></tr>
+    <tr><td></td><td><code>@lifecycle</code>, <code>@transition</code></td><td>Aggregate states and transitions</td></tr>
+    <tr><td><code>emits</code></td><td><code>withEvents</code></td><td>Possible outcomes of a command</td></tr>
+    <tr><td><code>when Event do command</code></td><td><code>@listener</code></td><td>Async interactions between contexts</td></tr>
+    <tr><td><code>call</code></td><td><code>@calls</code></td><td>Sync interactions</td></tr>
+    <tr><td><code>@time</code></td><td><code>@timer</code></td><td>Time-triggered actions</td></tr>
+    <tr><td><code>@compensates</code></td><td></td><td>Compensation relationships</td></tr>
+    <tr><td><code>@outcome</code>, <code>end</code></td><td></td><td>Declared outcomes of a business flow</td></tr>
   </tbody>
 </table>
 
