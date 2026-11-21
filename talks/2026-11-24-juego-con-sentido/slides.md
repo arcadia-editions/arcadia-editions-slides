@@ -81,6 +81,13 @@ hide: true
 <!-- The problem. LLMs write Markdown faster than any human can read it. Nobody reads it all; decisions slip in as "approved". Reading Markdown is the bottleneck. -->
 
 ---
+layout: section
+title: ''
+---
+
+<h1 style="font-size:64px !important;text-align:center">The proposal</h1>
+
+---
 layout: two-columns
 title: 'Spec-Driven Development: Two Loops'
 ---
@@ -114,13 +121,6 @@ Two loops. AFK first: fully agentic, orchestrator + subagents, only after the hu
 Then HITL: discovery + modeling (Event Storming, ZFL, ZDL), human reviews projections.
 Today we focus on HITL. Everything until "Away from Keyboard" section is the HITL loop.
 -->
-
----
-layout: section
-title: ''
----
-
-<h1 style="font-size:64px !important;text-align:center">The proposal</h1>
 
 ---
 layout: section
