@@ -488,56 +488,6 @@ title: 'When correct pieces behave incorrectly'
 </style>
 
 ---
-layout: default
-title: 'What a formal specification describes'
----
-
-<ul class="fspec">
-  <li v-click><ph-circles-four-bold class="ic" />The <b>state</b> of the system and its possible initial states</li>
-  <li v-click><ph-arrows-left-right-bold class="ic" />The <b>actions</b> that can change that state</li>
-  <li v-click><ph-seal-check-bold class="ic" />The <b>properties</b> we want the system to satisfy</li>
-  <li v-click><ph-warning-bold class="ic" />The <b>assumptions</b> under which the system operates</li>
-</ul>
-
-<!-- Properties: safety (something bad never happens) and liveness (something desired eventually happens). Model checking explores all reachable states of a finite model; on a violation it gives a counterexample: the sequence of actions that led to it. At design time, before code. Reference language: TLA+ (Lamport). -->
-
-<style>
-.fspec { list-style: none; margin: 20px 0 0; padding: 0; }
-.fspec li { font-size: 32px !important; line-height: 1.3 !important; margin: 0.55em 0 !important; color: #31394d; }
-.fspec li b { color: #d98f0a; }
-.fspec .ic { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em; color: #f7a81b; }
-</style>
-
----
-layout: default
-title: "Don't we already have it in our domain models?"
----
-
-<table class="fv-map">
-  <thead><tr><th>ZFL</th><th>ZDL</th><th>What it tells us</th></tr></thead>
-  <tbody>
-    <tr v-click><td></td><td><code>@lifecycle</code>, <code>@transition</code></td><td>Aggregate states and transitions</td></tr>
-    <tr v-click><td><code>emits</code></td><td><code>withEvents</code></td><td>Possible outcomes of a command</td></tr>
-    <tr v-click><td><code>when Event do command</code></td><td><code>@listener</code></td><td>Async interactions between contexts</td></tr>
-    <tr v-click><td><code>call</code></td><td><code>@calls</code></td><td>Sync interactions</td></tr>
-    <tr v-click><td><code>@time</code></td><td><code>@timer</code></td><td>Time-triggered actions</td></tr>
-    <tr v-click><td><code>@compensates</code></td><td></td><td>Compensation relationships</td></tr>
-    <tr v-click><td><code>@outcome</code>, <code>end</code></td><td></td><td>Declared outcomes of a business flow</td></tr>
-  </tbody>
-</table>
-
-<!-- First thought when learning TLA+: with DDD as code we already describe lifecycles, commands, events, transitions and interactions between BCs in a machine-readable language. Much of the structure of a state machine, distributed across aggregates and contexts. Open question: how much translates to a formal spec without inventing design decisions the modeller never made. -->
-
-<style>
-.fv-map { width: 100%; border-collapse: collapse; font-size: 20px; color: #31394d; }
-.fv-map th { text-align: left; padding: 6px 12px; border-bottom: 3px solid #31394d; }
-.fv-map th:nth-child(1) { color: #d98f0a; }
-.fv-map th:nth-child(2) { color: #00abc5; }
-.fv-map td { padding: 6px 12px; border-bottom: 1px solid #d6dbe1; }
-.fv-map code { font-size: 18px; }
-</style>
-
----
 layout: two-columns
 title: 'Formal verification with TLA+'
 class: code-tla
@@ -602,6 +552,56 @@ NoLeak == (payment = "DECLINED")
   background: #fff; border-left: 6px solid #f7a81b; box-shadow: 0 4px 14px rgba(49,57,77,.18);
   font-size: 24px; font-weight: 700; color: #31394d;
 }
+</style>
+
+---
+layout: default
+title: 'What a formal specification describes'
+---
+
+<ul class="fspec">
+  <li v-click><ph-circles-four-bold class="ic" />The <b>state</b> of the system and its possible initial states</li>
+  <li v-click><ph-arrows-left-right-bold class="ic" />The <b>actions</b> that can change that state</li>
+  <li v-click><ph-seal-check-bold class="ic" />The <b>properties</b> we want the system to satisfy</li>
+  <li v-click><ph-warning-bold class="ic" />The <b>assumptions</b> under which the system operates</li>
+</ul>
+
+<!-- Properties: safety (something bad never happens) and liveness (something desired eventually happens). Model checking explores all reachable states of a finite model; on a violation it gives a counterexample: the sequence of actions that led to it. At design time, before code. Reference language: TLA+ (Lamport). -->
+
+<style>
+.fspec { list-style: none; margin: 20px 0 0; padding: 0; }
+.fspec li { font-size: 32px !important; line-height: 1.3 !important; margin: 0.55em 0 !important; color: #31394d; }
+.fspec li b { color: #d98f0a; }
+.fspec .ic { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em; color: #f7a81b; }
+</style>
+
+---
+layout: default
+title: "Don't we already have it in our domain models?"
+---
+
+<table class="fv-map">
+  <thead><tr><th>ZFL</th><th>ZDL</th><th>What it tells us</th></tr></thead>
+  <tbody>
+    <tr v-click><td></td><td><code>@lifecycle</code>, <code>@transition</code></td><td>Aggregate states and transitions</td></tr>
+    <tr v-click><td><code>emits</code></td><td><code>withEvents</code></td><td>Possible outcomes of a command</td></tr>
+    <tr v-click><td><code>when Event do command</code></td><td><code>@listener</code></td><td>Async interactions between contexts</td></tr>
+    <tr v-click><td><code>call</code></td><td><code>@calls</code></td><td>Sync interactions</td></tr>
+    <tr v-click><td><code>@time</code></td><td><code>@timer</code></td><td>Time-triggered actions</td></tr>
+    <tr v-click><td><code>@compensates</code></td><td></td><td>Compensation relationships</td></tr>
+    <tr v-click><td><code>@outcome</code>, <code>end</code></td><td></td><td>Declared outcomes of a business flow</td></tr>
+  </tbody>
+</table>
+
+<!-- First thought when learning TLA+: with DDD as code we already describe lifecycles, commands, events, transitions and interactions between BCs in a machine-readable language. Much of the structure of a state machine, distributed across aggregates and contexts. Open question: how much translates to a formal spec without inventing design decisions the modeller never made. -->
+
+<style>
+.fv-map { width: 100%; border-collapse: collapse; font-size: 20px; color: #31394d; }
+.fv-map th { text-align: left; padding: 6px 12px; border-bottom: 3px solid #31394d; }
+.fv-map th:nth-child(1) { color: #d98f0a; }
+.fv-map th:nth-child(2) { color: #00abc5; }
+.fv-map td { padding: 6px 12px; border-bottom: 1px solid #d6dbe1; }
+.fv-map code { font-size: 18px; }
 </style>
 
 ---
