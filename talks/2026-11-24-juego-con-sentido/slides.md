@@ -51,6 +51,41 @@ title: 'The three pillars of agentic engineering'
 <!-- Architect (DDD), scientist (FV), site inspector (SbE) feed the robot; its fast stream of code is filtered by the examples gate. Today: mostly pillar 1, a first look at pillar 2. -->
 
 ---
+layout: two-columns
+title: 'Spec-Driven Development: Two Loops'
+---
+
+::left::
+
+<div v-click="1">
+
+### Human in the Loop
+
+<Shot src="/two-loops-human-in-the-loop-featured.png" todo="HITL loop image" h="260px" />
+
+DDD → models you can read and approve
+
+</div>
+
+::right::
+
+<div v-click.hide="2">
+
+### Away From Keyboard
+
+<Shot src="/two-loops-afk-featured.png" todo="AFK loop image" h="260px" />
+
+Agents implement the approved models
+
+</div>
+
+<!--
+Two loops. AFK first: fully agentic, orchestrator + subagents, only after the human approves the models.
+Then HITL: discovery + modeling (Event Storming, ZFL, ZDL), human reviews projections.
+Today we focus on HITL. Everything until "Away from Keyboard" section is the HITL loop.
+-->
+
+---
 layout: section
 title: 'Software Engineering in 2026'
 ---
@@ -86,41 +121,6 @@ title: ''
 ---
 
 <h1 style="font-size:64px !important;text-align:center">The proposal</h1>
-
----
-layout: two-columns
-title: 'Spec-Driven Development: Two Loops'
----
-
-::left::
-
-<div v-click="1">
-
-### Human in the Loop
-
-<Shot src="/two-loops-human-in-the-loop-featured.png" todo="HITL loop image" h="260px" />
-
-DDD → models you can read and approve
-
-</div>
-
-::right::
-
-<div v-click.hide="2">
-
-### Away From Keyboard
-
-<Shot src="/two-loops-afk-featured.png" todo="AFK loop image" h="260px" />
-
-Agents implement the approved models
-
-</div>
-
-<!--
-Two loops. AFK first: fully agentic, orchestrator + subagents, only after the human approves the models.
-Then HITL: discovery + modeling (Event Storming, ZFL, ZDL), human reviews projections.
-Today we focus on HITL. Everything until "Away from Keyboard" section is the HITL loop.
--->
 
 ---
 layout: section
