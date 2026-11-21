@@ -13,7 +13,7 @@ rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
 
 const talks = readdirSync(join(root, "talks"), { withFileTypes: true })
-  .filter((d) => d.isDirectory() && existsSync(join(root, "talks", d.name, "slides.md")))
+  .filter((d) => d.isDirectory() && d.name !== "theme-showcase" && existsSync(join(root, "talks", d.name, "slides.md")))
   .map((d) => d.name)
   .sort((a, b) => /^\d/.test(b) - /^\d/.test(a) || b.localeCompare(a));
 

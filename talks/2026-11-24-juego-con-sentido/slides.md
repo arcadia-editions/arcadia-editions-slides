@@ -343,6 +343,24 @@ when OrderCreated do authorizePayment {
 ````
 
 ---
+layout: default
+title: 'ZFL Projections - Event Flow'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/zfl-eventflow-to-the-side.png" todo="ZDL: Event Flow" h="437px" />
+</div>
+
+---
+layout: default
+title: 'ZFL Projections - Systems'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/zfl-systems.png" todo="ZFL Systems" h="437px" />
+</div>
+
+---
 layout: section
 title: 'Formal Verification'
 ---
