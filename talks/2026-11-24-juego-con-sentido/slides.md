@@ -248,6 +248,41 @@ title: 'Arcadia Editions @ GitHub'
 
 ---
 layout: default
+title: 'What I was building this year'
+---
+
+<div class="triad">
+  <div class="tri">
+    <div class="tri-img sketch"><div class="es-crop"><img src="/Layered-EventStorming-Blueprint-Stack.png" /></div></div>
+    <h3>ZFL</h3>
+    <p>Event Storming as Code</p>
+  </div>
+  <div class="tri">
+    <img src="/arcadia-editions-logo.png" class="tri-img contain" />
+    <h3>API & Event Governance</h3>
+  </div>
+  <div class="tri">
+    <div class="tri-img icon"><carbon-flow-modeler /></div>
+    <h3>Architecture World Model</h3>
+    <p>VS Code, IntelliJ, browser</p>
+  </div>
+</div>
+
+<style>
+.triad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 30px; text-align: center; }
+.tri-img { width: 100%; height: 170px; object-fit: cover; border-radius: 8px; }
+.tri-img.contain { object-fit: contain; }
+.tri-img.sketch { display: flex; align-items: center; }
+.es-crop { position: relative; overflow: hidden; width: 100%; aspect-ratio: 1380 / 430; transform: rotate(-15deg) scale(1.15); }
+.es-crop img { position: absolute; width: 121.1%; max-width: none; left: -13.04%; top: -4.65%; }
+.tri-img.sketch { overflow: visible; }
+.tri-img.icon { display: flex; align-items: center; justify-content: center; font-size: 130px; color: #00abc5; background: #f2f5f8; }
+.tri h3 { margin: 18px 0 4px !important; font-size: 26px !important; color: #31394d; }
+.tri p { margin: 0 !important; font-size: 20px; color: #6b7785; }
+</style>
+
+---
+layout: default
 title: 'Too many balls in the air'
 ---
 
