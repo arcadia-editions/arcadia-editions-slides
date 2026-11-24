@@ -228,17 +228,6 @@ title: 'ZDL: Design Level Event Storming as Code'
 <!-- ZDL: Design Level as code. Built 2023, in production projects for 4 years. Gave me the experience building DSLs, parsers and IDE editors (highlighting, autocomplete, preview). -->
 
 ---
-layout: default
-title: 'Deterministic generation'
----
-
-<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px 0;display:flex;align-items:center;justify-content:center">
-<Shot src="/zenwave-website-light.png" todo="Screenshot: ZenWave website" h="437px" />
-</div>
-
-<!-- Flashback: ZenWave -->
-
----
 layout: cover
 title: 'Arcadia Editions'
 ---
@@ -368,6 +357,408 @@ title: 'ZFL Projections - Sequence Diagrams'
 <div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
 <Shot src="/zfl-sequence-diagrams-to-the-side.png" todo="ZFL: Sequence diagrams" h="437px" />
 </div>
+
+---
+layout: section
+title: 'Zoom in'
+---
+
+<div class="zoom-stage">
+  <div class="zoom-word">ZFL to ZDLs</div>
+  <div v-click class="zoom-glass">
+    <img src="/magnifying-glass.png" alt="Magnifying glass" />
+  </div>
+</div>
+
+<!-- Zoom from the business flow (ZFL) into each bounded context (ZDLs). -->
+
+<style>
+.zoom-stage { position: relative; width: 860px; height: 380px; margin: -20px auto 0; }
+.zoom-word {
+  position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+  text-align: center; font-size: 110px; font-weight: 700; color: #31394d; white-space: nowrap;
+  z-index: 1;
+}
+.zoom-glass {
+  position: absolute; width: 380px; height: 380px; left: 442px; top: 36px;
+  transform: rotate(-20deg); /* more negative = more horizontal handle */
+  z-index: 0; /* behind the letters once in place */
+  /* z-index flips after the 0.9s move: glass enters in front, then goes behind */
+  transition: transform 0.9s cubic-bezier(.2,.8,.2,1), opacity 0.6s ease, z-index 0s linear 0.9s;
+}
+.zoom-glass.slidev-vclick-hidden { opacity: 0 !important; transform: translate(220px, 80px) rotate(10deg) scale(.7); z-index: 2; }
+.zoom-glass img { width: 100%; height: 100%; mix-blend-mode: multiply; }
+</style>
+
+---
+layout: default
+title: 'From ZFL: what we have to build'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/zfl-systems.png" todo="ZFL Systems" h="437px" />
+</div>
+
+<!-- Same Systems projection, different question: from one ZFL we know which systems to build, and which commands and events each one implements. -->
+
+---
+layout: default
+title: 'One business flow: many bounded contexts'
+---
+
+<div style="display:flex;justify-content:center">
+
+```mermaid {scale: 0.70}
+%%{init: {"layout": "dagre", "flowchart": {"rankSpacing": 200, "wrappingWidth": 600}}}%%
+flowchart LR
+  ZFL("<span style='display:inline-flex;align-items:center;white-space:nowrap'><img src='/icons/flow.svg' style='display:inline-block;width:24px;height:24px;max-width:24px;flex:none;vertical-align:middle;margin-right:10px'/>place-order-flow.zfl</span>"):::flow
+  ZFL --> A("<span style='display:inline-flex;align-items:center;white-space:nowrap'><img src='/icons/context.svg' style='display:inline-block;width:22px;height:22px;max-width:22px;flex:none;vertical-align:middle;margin-right:10px'/>orders-checkout.zdl</span>"):::ctx
+  ZFL --> B("<span style='display:inline-flex;align-items:center;white-space:nowrap'><img src='/icons/context.svg' style='display:inline-block;width:22px;height:22px;max-width:22px;flex:none;vertical-align:middle;margin-right:10px'/>catalog-inventory.zdl</span>"):::ctx
+  ZFL --> C("<span style='display:inline-flex;align-items:center;white-space:nowrap'><img src='/icons/context.svg' style='display:inline-block;width:22px;height:22px;max-width:22px;flex:none;vertical-align:middle;margin-right:10px'/>payments-processing.zdl</span>"):::ctx
+  ZFL --> D("<span style='display:inline-flex;align-items:center;white-space:nowrap'><img src='/icons/context.svg' style='display:inline-block;width:22px;height:22px;max-width:22px;flex:none;vertical-align:middle;margin-right:10px'/>fulfillment-shipping.zdl</span>"):::ctx
+  ZFL --> E("<span style='display:inline-flex;align-items:center;white-space:nowrap'><img src='/icons/context.svg' style='display:inline-block;width:22px;height:22px;max-width:22px;flex:none;vertical-align:middle;margin-right:10px'/>notifications-consumer.zdl</span>"):::ctx
+  classDef flow fill:#f7a81b,stroke:#d98f0a,color:#31394d,rx:14,ry:14,font-size:20px
+  classDef ctx fill:#00abc5,stroke:#008ba1,color:#fff,rx:14,ry:14,font-size:18px
+  linkStyle default stroke:#31394d,stroke-width:2px
+```
+
+</div>
+
+---
+layout: default
+title: 'ZDL: Design Level Event Storming as Code'
+---
+
+<div style="margin:-32px -55px -38px">
+<Shot src="/EventStorming-ZDL-Mapping.png" todo="2023 image: Event Storming design level mapped to ZDL" h="455px" />
+</div>
+
+---
+layout: default
+title: 'ZenWave SDD skills'
+---
+
+<p style="position:absolute;right:24px;bottom:12px;font-size:20px;color:#6b7785;margin:0">github.com/ZenWave360/zenwave-sdd</p>
+
+<div style="margin:-22px -55px 0">
+<Shot src="/zenwave-sdd-github.png" todo="Screenshot: skills repo in GitHub" h="400px" />
+</div>
+
+<!-- Not by hand: an AI skill in this repo reads the ZFL + the services to implement, and drafts one repo per system with a draft ZDL. Very complete draft; you still review it. -->
+
+---
+layout: section
+title: 'Built to last'
+---
+
+# Code is getting cheaper.
+
+---
+layout: default
+title: 'Built to last'
+---
+
+# What outlives the code?
+
+<div style="height:300px;display:flex;align-items:center;justify-content:center">
+  <ul class="outlives">
+    <li v-click>Data</li>
+    <li v-click>APIs</li>
+    <li v-click>Events</li>
+  </ul>
+</div>
+
+<style>
+.outlives { list-style: none; margin: 0; padding: 0; text-align: left; }
+.outlives li { display: flex; align-items: center; gap: 0.4em; font-size: 54px !important; font-weight: 700; line-height: 1.1 !important; margin: 0.18em 0 !important; color: #31394d; }
+/* checkbox marker: cyan box with a check */
+.outlives li::before {
+  content: "✓"; flex: none; width: 1.4em; height: 1.4em; box-sizing: border-box;
+  border: 0.14em solid #00abc5; border-radius: 0.2em;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.57em; font-weight: 900; line-height: 1; color: #00abc5;
+}
+</style>
+
+<!-- Agentic coding makes code cheap. Rewrite the app in a year. Data, APIs, events must last. -->
+
+---
+layout: default
+title: 'ZDL captures what lasts'
+class: code-sm
+---
+
+````md magic-move {lines: true}
+```zfl
+// Data: aggregate + state machine
+@aggregate
+@lifecycle(field: status, initial: CREATED)
+entity Order {
+    orderId String required unique
+    status OrderStatus required
+    totalAmount BigDecimal required
+}
+relationship OneToMany {
+    Order{items} to OrderItem{order required}
+}
+
+enum OrderStatus { CREATED(1), CONFIRMED(2), CANCELLED(3) }
+```
+
+```zfl
+// APIs: commands, REST endpoints, state transitions
+@rest("/orders")
+service OrdersCheckoutService for (Order) {
+
+    @post("/start-checkout")
+    @transition(to: CREATED)
+    startOrderCheckout(StartOrderCheckoutInput) Order
+        withEvents [OrderCreated | StockUnavailable]
+
+    @get("/{id}")
+    getOrder(id) Order?
+}
+```
+
+```zfl
+// Events: what we publish (AsyncAPI)
+@asyncapi({ channel: "order-created-event-v1" })
+event OrderCreated {
+    orderId String
+    customerId String
+    paymentMethodId String
+    amount BigDecimal
+    currency String
+}
+```
+
+```zfl
+// Events: what we consume (AsyncAPI)
+@rest("/orders")
+service OrdersCheckoutService for (Order) {
+
+    @asyncapi(api: PaymentsProcessingApi,
+              channel: "payment-authorized-event-v1")
+    @transition(from: CREATED, to: CONFIRMED)
+    confirmOrder(ConfirmOrderInput) Order  withEvents OrderConfirmed
+}
+```
+
+```zfl {5-6}
+// Events: what we consume (AsyncAPI)
+@rest("/orders")
+service OrdersCheckoutService for (Order) {
+
+    @asyncapi(api: PaymentsProcessingApi,
+              channel: "payment-authorized-event-v1")
+    @transition(from: CREATED, to: CONFIRMED)
+    confirmOrder(ConfirmOrderInput) Order  withEvents OrderConfirmed
+}
+```
+````
+
+<!-- Source: orders-checkout-api/domain-model.zdl (trimmed). Data + state machine, APIs, events. -->
+
+---
+layout: default
+title: 'Connected Graph: ZFL ↔ ZDL'
+---
+
+<div class="link-panes">
+<div class="link-pane zfl">
+<b>place-order-flow.zfl</b>
+<pre>systems {
+  <span v-mark="{ at: 1, type: 'box', color: '#f7a81b' }">@zdl("catalog-inventory-api/domain-model.zdl")</span>
+  CatalogInventory { ... }
+}
+&nbsp;
+@compensates(reserveStock)
+when <span v-mark="{ at: 1, type: 'underline', color: '#00abc5' }">PaymentDeclined</span>, ...
+  do <span v-mark="{ at: 1, type: 'circle', color: '#3fb27f' }">releaseStock</span> {
+    service CatalogInventory.InventoryService
+    emits <span v-mark="{ at: 1, type: 'underline', color: '#9b6bd6' }">StockReleased</span>
+}</pre>
+</div>
+<div class="link-pane zdl">
+<b v-mark="{ at: 1, type: 'box', color: '#f7a81b' }">catalog-inventory-api/domain-model.zdl</b>
+<pre>service InventoryService for (StockReservation) {
+&nbsp;
+  @asyncapi(api: PaymentsProcessingApi,
+    channel: "<span v-mark="{ at: 1, type: 'underline', color: '#00abc5' }">payment-declined-event-v1</span>")
+  @transition(from: [RESERVED, CONFIRMED],
+              to: RELEASED)
+  <span v-mark="{ at: 1, type: 'circle', color: '#3fb27f' }">releaseStock</span>(ReleaseStockInput)
+    withEvents <span v-mark="{ at: 1, type: 'underline', color: '#9b6bd6' }">StockReleased</span>
+}</pre>
+</div>
+</div>
+
+<p v-click="1" class="link-verdict">ZFL + ZDLs → one connected graph, deterministically parseable.</p>
+
+<!-- Every name in the ZFL points to something real in a ZDL. 1: system → ZDL file. 2: command → service method (with its state transition). 3: event consumed → AsyncAPI channel. 4: event emitted → ZDL event. Not a drawing: links you can follow, by parser or by LLM. -->
+
+<style>
+.link-panes { display: flex; gap: 20px; margin-top: -6px; }
+.link-pane { flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 10px 14px; background: #fff; border: 2px solid #31394d; border-top-width: 8px; border-radius: 8px; }
+.link-pane.zfl { border-top-color: #f7a81b; }
+.link-pane.zdl { border-top-color: #00abc5; }
+.link-pane b { font-size: 16px; color: #31394d; align-self: flex-start; }
+.link-pane pre { margin: 0; font-family: 'Roboto Mono', Consolas, monospace; font-size: 14px; line-height: 1.45; color: #31394d; white-space: pre; background: none; }
+.link-verdict { margin-top: 14px !important; font-size: 24px; font-weight: 700; text-align: center; color: #31394d; }
+</style>
+
+---
+layout: default
+title: 'Connected Graph'
+---
+
+<MetroMap />
+
+<p style="margin-top:6px;font-size:24px;font-weight:700;text-align:center">Models become a connected graph.</p>
+
+---
+layout: default
+title: 'Connected Graph: the parser'
+hide: true
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px 0;display:flex;align-items:center;justify-content:center">
+<Shot src="/zenwave-architecture-github.png" todo="Screenshot: deterministic parser library (architecture repo on GitHub)" h="437px" />
+</div>
+
+---
+layout: default
+title: 'Connected Graph: Event Catalog'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px 0;display:flex;align-items:center;justify-content:center">
+<Shot src="/eventcatalog-screenshot-light.png" todo="Screenshot: Event Catalog generated from ZFL + ZDLs" h="437px" />
+</div>
+
+
+---
+layout: default
+title: 'LLMs reason on the graph too'
+clicks: 5
+---
+
+<p style="margin:-10px 0 14px;font-size:26px;font-weight:700;text-align:center">“What happens to the stock if the payment is declined?”</p>
+
+<GraphTrace :step="$clicks" />
+
+<p v-click="5" style="margin-top:10px;font-size:22px;text-align:center;color:#31394d">
+Stock is released <span style="color:#6b7785">(compensates reserveStock)</span> and the order is cancelled.
+</p>
+
+<!-- Option 1. No parser: the agent follows the links. Click by click: authorize → declined → releaseStock → StockReleased/cancelOrder → OrderCancelled. -->
+
+
+---
+layout: default
+title: 'Connected graph · agents'
+hide: true
+---
+
+# LLMs reason on the graph too
+
+No library needed: agents read ZFL + ZDLs and follow the links.
+
+---
+layout: default
+title: 'What is formal verification?'
+hide: true
+---
+
+<div class="fv">
+  <div class="fv-col tests">
+    <small>Tests</small>
+    <b>Check the cases you thought of</b>
+    <span>A few paths, chosen by a human</span>
+  </div>
+  <div v-click="1" class="fv-col proof">
+    <small>Formal verification</small>
+    <b>Check every possible state</b>
+    <span>All interleavings, all orderings, all failures</span>
+  </div>
+</div>
+
+<div v-click="2" class="fv-props">
+  <p><b>Safety</b> · something bad never happens <em>"never ship an unpaid order"</em></p>
+  <p><b>Liveness</b> · something good eventually happens <em>"a declined payment always releases the stock"</em></p>
+</div>
+
+<!-- Define it before using it. Tests sample the behaviour; formal verification (model checking) explores every reachable state of a model and checks properties. Two kinds of property: safety and liveness. Reference tool: TLA+. -->
+
+<style>
+.fv { display: flex; gap: 28px; justify-content: center; margin-top: 6px; }
+.fv-col { display: flex; flex-direction: column; gap: 6px; width: 380px; padding: 14px 20px; background: #fff; box-shadow: 0 4px 14px rgba(49,57,77,.18); }
+.fv-col.tests { border-left: 6px solid #9aa5b1; }
+.fv-col.proof { border-left: 6px solid #f7a81b; }
+.fv-col small { font-size: 15px; color: #6b7785; text-transform: uppercase; letter-spacing: .05em; }
+.fv-col b { font-size: 28px; line-height: 1.2; color: #31394d; }
+.fv-col span { font-size: 18px; color: #31394d; }
+.fv-props { margin-top: 30px; }
+.fv-props p { margin: 0.4em 0 !important; font-size: 22px; color: #31394d; }
+.fv-props em { color: #6b7785; }
+</style>
+
+---
+layout: default
+title: 'Why formal verification?'
+hide: true
+---
+
+<div class="why">
+  <p class="why-lead">In an event-driven flow, the bugs live <span class="hl">between</span> services</p>
+  <ul class="why-list">
+    <li v-click="1">Race conditions between events</li>
+    <li v-click="2">Lost or missing compensations</li>
+    <li v-click="3">Stuck states: orders that never finish</li>
+  </ul>
+  <p v-click="4" class="why-end">Tests rarely find them. Exploring every state does.</p>
+</div>
+
+<!-- DRAFT, content to review. Why, not how: the hard bugs in event-driven flows are in the interleavings between services, not inside one service. Tests sample a few paths; model checking explores all of them. -->
+
+<style>
+.why-lead { margin: 0 0 18px !important; font-size: 32px !important; font-weight: 700; color: #31394d; }
+.why-lead .hl { color: #f7a81b; }
+.why-list { list-style: none; margin: 0; padding: 0; }
+.why-list li { font-size: 28px !important; font-weight: 600; margin: 0.4em 0 0 1em !important; color: #31394d; }
+.why-list li::before { content: "⚠"; margin-right: 0.5em; color: #f7a81b; }
+.why-end { margin-top: 26px !important; font-size: 28px !important; font-weight: 700; color: #00abc5; }
+</style>
+
+---
+layout: default
+title: 'Towards formal verification'
+hide: true
+---
+
+# Towards formal verification?
+
+<div style="height:300px;display:flex;align-items:center;justify-content:center">
+  <ul class="tbd">
+    <li v-click>ZFL links the state machines of each ZDL into one flow</li>
+    <li v-click>Every action has its compensation</li>
+    <li v-click>Each ZDL state machine is valid by itself</li>
+    <li v-click>With discipline → verifiable business flows</li>
+  </ul>
+</div>
+
+<!-- Pointer only, not a promise. Building blocks are in ZFL; needs discipline. Orange = not green yet, not red: still to be proven. -->
+
+<style>
+.tbd { list-style: none; margin: 0; padding: 0; text-align: left; }
+.tbd li { display: flex; align-items: center; gap: 0.6em; font-size: 30px !important; font-weight: 700; line-height: 1.2 !important; margin: 0.35em 0 !important; color: #31394d; }
+/* orange checkbox: checks we need to pass; not green yet, not red either */
+.tbd li::before {
+  content: "✓"; flex: none; width: 1.3em; height: 1.3em; box-sizing: border-box;
+  border: 0.12em solid #f7a81b; border-radius: 0.2em;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85em; font-weight: 900; line-height: 1; color: #f7a81b;
+}
+</style>
 
 ---
 layout: section
@@ -587,6 +978,7 @@ title: 'What a formal specification describes'
 ---
 layout: default
 title: "Don't we already have it in our domain models?"
+hide: true
 ---
 
 <table class="fv-map">
@@ -659,6 +1051,49 @@ NoHoldOnCancelledOrder ==
 ````
 
 <!-- Trigger, guard and target state come straight from the models. The ELSE branch, event delivery and the property itself do not: they come from prose or assumptions. -->
+
+---
+layout: default
+title: 'ZFL Projections - Event Flow with System Lanes'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/eventflow-lanes.png" todo="Event Flow with Lanes" h="437px" />
+</div>
+
+---
+layout: two-columns
+title: 'ZFL → state machine per bounded context'
+---
+
+::left::
+
+<h3 style="font-size:1.4em">Process level: transitions between systems</h3>
+
+```mermaid {scale: 0.7}
+sequenceDiagram
+    Customer->>Orders: startOrderCheckout
+    Orders->>Payments: authorizePayment
+    Payments-->>Orders: PaymentAuthorized
+    Orders->>Orders: confirmOrder
+```
+
+<p style="font-size:0.8em">Each system owns its state machine. Zoom in: <b>Orders</b></p>
+
+::right::
+
+<div style="border-left:2px solid #ccc;padding-left:24px;margin-left:24px">
+
+```mermaid {scale: 0.75}
+stateDiagram-v2
+    [*] --> CREATED : startOrderCheckout
+    CREATED --> CONFIRMED : confirmOrder
+    CREATED --> CANCELLED : cancelOrder
+    CONFIRMED --> CANCELLED : cancelOrder
+    CANCELLED --> [*]
+```
+
+</div>
 
 ---
 layout: default
@@ -755,6 +1190,17 @@ title: 'Behaviour Validation'
 .bv li { font-size: 36px !important; font-weight: 700; margin: 0.5em 0 !important; color: #31394d; }
 .bv li::before { content: "▸"; margin-right: 0.5em; color: #3fb27f; }
 </style>
+
+---
+layout: default
+title: 'Deterministic generation'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px 0;display:flex;align-items:center;justify-content:center">
+<Shot src="/zenwave-website-light.png" todo="Screenshot: ZenWave website" h="437px" />
+</div>
+
+<!-- Flashback: ZenWave -->
 
 ---
 layout: section
