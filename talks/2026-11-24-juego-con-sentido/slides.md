@@ -248,6 +248,21 @@ title: 'Arcadia Editions @ GitHub'
 
 ---
 layout: default
+title: 'Too many balls in the air'
+---
+
+<div style="margin:-34px -55px -38px;height:457px;box-sizing:border-box;padding:10px;display:flex;align-items:center;justify-content:center">
+<Shot src="/too-many-balls.png" todo="Too many balls in the air" h="437px" />
+</div>
+
+<!--
+This year I wasn't researching SDD. I was building a language to digitize Event Storming, a fictional company to test governance, a platform to visualize it all.
+Migrating to Java + IntelliJ Platform, running in VS Code and the browser. All with agents.
+Saturdays integrating and releasing libraries in order, one after another. I hit the ceiling.
+-->
+
+---
+layout: default
 title: 'Arcadia Editions in Miro'
 ---
 
@@ -1269,6 +1284,26 @@ hide: true
 .recap-row.spec .q, .recap-row.spec .q .ic, .recap-row.spec .a { color: #00abc5; }
 .recap-row.prove .a { color: #f7a81b; }
 .recap-row.sbe .a { color: #3fb27f; }
+</style>
+
+---
+layout: outro
+title: 'Thank you!'
+---
+
+# Thank you!
+
+Slides, code and links<br>arcadia-editions.github.io/arcadia-editions-slides
+
+ivangsa.com
+
+<img class="iv-qr" src="/juego-slides-qr.svg" alt="QR code to these slides" />
+
+<p style="position:absolute;left:24px;bottom:12px;font-size:18px;color:#6b7785;margin:0">Ivan Garcia Sainz-Aja</p>
+<p style="position:absolute;right:24px;bottom:12px;font-size:18px;color:#6b7785;margin:0">Juego con Sentido · 24 November 2026</p>
+
+<style>
+.ivangsa.closing .iv-body .iv-qr { width: 230px !important; height: 230px !important; right: 60px !important; bottom: 50px !important; }
 </style>
 
 ---
